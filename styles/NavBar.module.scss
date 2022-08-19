@@ -1,0 +1,22 @@
+
+
+.navBarContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    height: 3.5em;
+    width: 100vw;
+    background-color: rgba(7,7,7,.93);
+}
+.navbarLinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.link{
+    padding-left: 15px;
+    padding-right: 15px;
+}
