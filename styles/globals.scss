@@ -9,6 +9,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1, h4{
+  color: #fff;
+}
+h4{
+  font-weight: 300;
+}
 a {
   color: var(--link-color-normal);
   text-decoration: none;
@@ -23,4 +29,3 @@ ul {
   margin: 0;
   padding: 0;
   }
-  

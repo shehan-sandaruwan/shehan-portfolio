@@ -1,12 +1,10 @@
-import Head from "next/head";
-import Image from "next/image";
-import NavBar from "../Component/Navbar";
-import styles from "../styles/Home.module.scss";
+import React from "react";
+import DefaultLayout from "../Component/Layout/DefaultLayout";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <NavBar />
-    </div>
+    <React.Fragment>
+      <DefaultLayout />
+    </React.Fragment>
   );
 }

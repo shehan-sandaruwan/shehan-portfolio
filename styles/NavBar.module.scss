@@ -2,12 +2,16 @@
 
 .navBarContainer{
     display: flex;
+    position: sticky;
+    align-self: flex-start;
     flex-direction: column;
     justify-content: center;
+    top: 0;
     margin: 0;
+    padding: 10px;
     height: 3.5em;
-    width: 100vw;
     background-color: rgba(7,7,7,.93);
+    z-index: 1wwww;
 }
 .navbarLinks{
     display: flex;

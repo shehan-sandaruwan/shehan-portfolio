@@ -1,18 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import NavBar from "../Component/Navbar";
+import DefaultLayout from "../Component/Layout/DefaultLayout";
+import MyProjects from "../Component/MyProjects";
 
 const Projects = () => {
   return (
-    <React.Fragment>
-      <div>
-        <Image
-          src="/images/yellowHeart/yh-kol.gif"
-          alt="KOL Page"
-          width={500}
-          height={500}
-        />
-      </div>
-    </React.Fragment>
+    <DefaultLayout>
+      <MyProjects />
+    </DefaultLayout>
   );
 };
 
