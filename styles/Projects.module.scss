@@ -48,3 +48,9 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+.description{
+    display: flex;
+    flex-direction: column;
+    width: 60ch;
+}

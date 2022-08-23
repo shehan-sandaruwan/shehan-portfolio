@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/Projects.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -10,28 +11,60 @@ const projects = [
     index: 1,
     imageUrl: "/images/yellowHeart/kol-page.png",
     logoUrl: "/images/yellowHeart/logo-mobile.svg",
-    background: "linear-gradient(to right,  rgba(255,0,0,0), #ffd100",
-    href: "/projects/yellowHert",
+    background: "linear-gradient(to right,  rgba(255,0,0,0), #ffd100)",
+    href: "/project-description/yellowHeart",
+    duration: "2021-09 - Present",
   },
   {
     name: "Fancy-Mantis",
-    description: "",
+    description: "Frontend developer - freelance",
     index: 2,
     imageUrl: "/images/yellowHeart/fancy-mantis.png",
-    logoUrl: "/images/yellowHeart/logo-mobile.svg",
+    logoUrl: "/images/yellowHeart/fancy-logo.svg",
     background: "linear-gradient(to right, rgba(255,0,0,0), #2F69FE)",
-    href: "/projects/fancyMantis",
+    href: "/project-description/fancyMantis",
+    duration: "2022-04 - Present",
+  },
+  {
+    name: "DFN-Pro-11",
+    description: "Frontend developer freelance",
+    index: 3,
+    imageUrl: "/images/yellowHeart/chart.svg",
+    logoUrl: "/images/yellowHeart/dfn-logo.svg",
+    background: "linear-gradient(to right, rgba(255,0,0,0), #4DBBEB)",
+    href: "/project-description/fancyMantis",
+    duration: "2019-03 - 2020-12",
   },
 ];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
 
 const MyProjects = (props) => {
   return (
     <React.Fragment>
-      <div className={styles.projectContainer}>
-        <div className={styles.projectHeader}>
+      <motion.div
+        className={styles.projectContainer}
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div className={styles.projectHeader} variants={item}>
           <h1>Projects I Worked on</h1>
-        </div>
-        <div style={{ width: "100%" }}>
+        </motion.div>
+        <motion.div style={{ width: "100%" }} variants={item}>
           {projects.map((project) => {
             return (
               <React.Fragment key={project.index}>
@@ -51,6 +84,7 @@ const MyProjects = (props) => {
                     <div className={styles.description}>
                       <h1>{project.name}</h1>
                       <h4>{project.description}</h4>
+                      <h4>{project.duration}</h4>
                       <div className={styles.learnMore}>
                         <Link href={project.href}>
                           <a>
@@ -85,8 +119,8 @@ const MyProjects = (props) => {
               </React.Fragment>
             );
           })}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </React.Fragment>
   );
 };

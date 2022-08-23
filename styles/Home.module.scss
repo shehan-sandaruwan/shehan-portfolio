@@ -2,3 +2,17 @@
 .container{
   background-color: #000;
 }
+
+.mySelfImage{
+  height: auto;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-image: linear-gradient(180deg, #111312, #1f2120);
+}
+
+.imagePosition {
+  position: fixed;
+  bottom: 0px;
+}
