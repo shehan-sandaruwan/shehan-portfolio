@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import YellowHeart from "../../../Component/YellowHeart";
+import FancyMantis from "../../../Component/FancyMantis";
+import Pro11Chart from "../../../Component/Pro11Chart";
 
 const ProjectRenderer = () => {
   const router = useRouter();
@@ -14,7 +16,9 @@ const ProjectRenderer = () => {
 
   return (
     <React.Fragment>
-      {projectName === "yellowHeart" ? <YellowHeart /> : <></>}
+      {projectName === "yellowHeart" && <YellowHeart />}
+      {projectName === "fancyMantis" && <FancyMantis />}
+      {projectName === "pro11Chart" && <Pro11Chart />}
     </React.Fragment>
   );
 };

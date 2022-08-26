@@ -15,7 +15,7 @@
     z-index: 2;
 }
 
-.galleryImages{
+.galleryImagesYH{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +25,30 @@
     margin-bottom: 20px;
     border-radius: 5px;
     background-image:linear-gradient(to right,  rgba(255,0,0,0), #ffd100);
+}
+
+.galleryImagesFM{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-image:linear-gradient(to right, rgba(255,0,0,0), #2F69FE);
+}
+
+.galleryImagesPro11{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), #4DBBEB);
 }
 
 .nameAndTitle{

@@ -32,7 +32,7 @@ const projects = [
     imageUrl: "/images/yellowHeart/chart.svg",
     logoUrl: "/images/yellowHeart/dfn-logo.svg",
     background: "linear-gradient(to right, rgba(255,0,0,0), #4DBBEB)",
-    href: "/project-description/fancyMantis",
+    href: "/project-description/pro11Chart",
     duration: "2019-03 - 2020-12",
   },
 ];

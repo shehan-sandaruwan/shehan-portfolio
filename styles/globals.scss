@@ -2,10 +2,23 @@
 @import "mixins";
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 
-html,
-body {
-  padding: 0;
+* { 
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #000;
+  background-image: url("/images/home-page.png");
+  background-position: 50% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Work Sans', sans-serif;
 }
 h1{
@@ -34,7 +47,7 @@ a {
   text-decoration: none;
 }
 
-a:active  {
+.active a {
   color: var(--link-color-active);
 }
 
@@ -53,6 +66,34 @@ ul {
     left: 0;
     right: 0;
     height: 5px;
-    bottom: 50px;
+    bottom: 10px;
   }
   
+  .go-next{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 20px;
+  }
+
+  .go-prev{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 20px;
+  }
+
+  .go-next-prev{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size: 20px;
+  }
+
+  .learn-more{
+    font-size: 20px;
+  }
+
+  .nav-items {
+    margin-left: auto;
+  } 

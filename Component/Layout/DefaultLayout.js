@@ -2,13 +2,14 @@ import react from "react";
 import NavBar from "../Navbar";
 import styles from "../../styles/Home.module.scss";
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import React from "react";
 
 const DefaultLayout = (props) => {
   return (
-    <div className={styles.container}>
-      <NavBar />
+    <React.Fragment>
+      <NavBar isActive={props.isActive} />
       {props.children}
-    </div>
+    </React.Fragment>
   );
 };
 
