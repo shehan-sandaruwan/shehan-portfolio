@@ -1,26 +1,57 @@
 @import "variables";
 @import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 
-html,
-body {
-  padding: 0;
+* { 
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1, h4{
+html{
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #000;
+  background-image: url("/images/home-page.png");
+  background-position: 50% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Work Sans', sans-serif;
+}
+h1{
+  font-size: 3.20em;
+}
+
+
+li{
+  color: #fff;
+  font-size: 1em;
+  display: block;
+}
+
+h1, h4, h3{
   color: #fff;
 }
 h4{
   font-weight: 300;
+}
+p {
+  color: #fff;
+  width: 60ch;
 }
 a {
   color: var(--link-color-normal);
   text-decoration: none;
 }
 
-a:active, a:hover {
+.active a {
+  color: var(--link-color-active);
+}
+
+a:hover {
   color: var(--link-color-active);
 }
 
@@ -29,3 +60,40 @@ ul {
   margin: 0;
   padding: 0;
   }
+
+  .progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5px;
+    bottom: 10px;
+  }
+  
+  .go-next{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 20px;
+  }
+
+  .go-prev{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 20px;
+  }
+
+  .go-next-prev{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size: 20px;
+  }
+
+  .learn-more{
+    font-size: 20px;
+  }
+
+  .nav-items {
+    margin-left: auto;
+  } 
