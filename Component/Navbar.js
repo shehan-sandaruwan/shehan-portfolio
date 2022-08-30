@@ -39,7 +39,7 @@ const NavBar = (props) => {
               styles.link + `${props.isActive === "skills" ? " active" : ""}`
             }
           >
-            <Link href="/">
+            <Link href="/skills">
               <a>Skils &#38; Education</a>
             </Link>
           </div>

@@ -25,7 +25,6 @@ h1{
   font-size: 3.20em;
 }
 
-
 li{
   color: #fff;
   font-size: 1em;
@@ -52,14 +51,15 @@ a {
 }
 
 a:hover {
+  transform: scale(1.2);
+  transition-duration: 2s;
   color: var(--link-color-active);
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  }
+ul li { 
+  margin-top: 10px;
+  display: list-item;
+}
 
   .progress {
     position: fixed;

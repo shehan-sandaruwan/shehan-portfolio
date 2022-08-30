@@ -100,38 +100,40 @@ const Pro11Chart = () => {
               at greatly enhancing the user experience and simplifying &#38;
               speeding the investment decision making process.
             </p>
-            <h3>Duties</h3>
-            <ul>
-              <li>
-                Responsible for developed and designing Chart core
-                functionalities.
-              </li>
-              <li>
-                Different assessment elements and methodologies have been
-                developed to aid the stock markets&rsquo; complex
-                decision-making process.
-              </li>
-              <li>
-                Fixing production issues while also taking part in the
-                application&rsquo;s maintenance process was included in the
-                daily schedule.
-              </li>
-              <li>
-                Participated in client meetings as a core developer of the Chart
-                to provide visibility of the implemented functionalities and
-                Support clients to understand the process seamlessly.
-              </li>
-              <li>
-                Dom manipulation, Handling HTML5 canvas, Performance
-                enhancement, and implementation of critical data processing
-                logic were part of my role.
-              </li>
-            </ul>
-            <p>
-              Technologies used: JavaScript, PixiJs, HTML5, CSS, Jira, Design
-              Patterns (Singleton, Decorator, Factory, Observable)
-            </p>
-            <p>Tags: #Agile-mindset #GitFlow-WorkFlow</p>
+            <h3>Story about the project</h3>
+            <div className={styles.projectDetails}>
+              <ul>
+                <li>
+                  Responsible for developed and designing Chart core
+                  functionalities.
+                </li>
+                <li>
+                  Different assessment elements and methodologies have been
+                  developed to aid the stock markets&rsquo; complex
+                  decision-making process.
+                </li>
+                <li>
+                  Fixing production issues while also taking part in the
+                  application&rsquo;s maintenance process was included in the
+                  daily schedule.
+                </li>
+                <li>
+                  Participated in client meetings as a core developer of the
+                  Chart to provide visibility of the implemented functionalities
+                  and Support clients to understand the process seamlessly.
+                </li>
+                <li>
+                  Dom manipulation, Handling HTML5 canvas, Performance
+                  enhancement, and implementation of critical data processing
+                  logic were part of my role.
+                </li>
+              </ul>
+              <p>
+                <br />
+                Technologies used: JavaScript, PixiJs, HTML5, CSS, Jira, Design
+                Patterns (Singleton, Decorator, Factory, Observable)
+              </p>
+            </div>
           </div>
         </div>
         <motion.div variants={item} className={_styles.projectImages}>

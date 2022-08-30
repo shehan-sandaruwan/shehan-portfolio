@@ -98,41 +98,66 @@ const FancyMantis = () => {
               consumers, offering the advanced capability to manage and monitor
               regular operations.
             </p>
-            <h3>Duties</h3>
-            <ul>
-              <li>
-                Responsible for creating a Frontend React Application with
-                another backend developer. communicating with the backend
-                developer on Slack. Assigned tasks on Jira to keep track of
-                everything.
-              </li>
-              <li>
-                Responsible for reacting to a modern Dashboard based on the
-                given XD design.
-                <li>- User Panel</li>
-                <li>- Admin Panel</li>
-              </li>
-              <li>
-                Implemented Sortable/Searchable table component; used General
-                Table componenet to implement each use cases.
-              </li>
-              <li>
-                Handled AUTH using JWT token system provided by the backend
-                developer
-              </li>
-              <li>
-                Everything broken down into smaller components whenever
-                possible.
-              </li>
-            </ul>
-            <p>
-              Technologies used: JavaScript, ReactJs, NextJs, HTML5, SCSS, MUI,
-              Next-Auth, Jira, Axios
-            </p>
-            <p>
-              Tags: #Responsive #cross-browser #mixins #Agile-mindset
-              #GitFlow-WorkFlow
-            </p>
+            <h3>Story about the project</h3>
+            <div className={styles.projectDetails}>
+              <ul>
+                <li>
+                  Responsible for creating a Frontend React Application with
+                  another backend developer. communicating with the backend
+                  developer on Slack. Assigned tasks on Jira to keep track of
+                  everything.
+                </li>
+                <li>
+                  Responsible for reacting to a modern Dashboard based on the
+                  given XD design.
+                  <dd>- User Panel</dd>
+                  <dd>- Admin Panel</dd>
+                </li>
+                <li>
+                  Implemented Sortable/Searchable table component; used general
+                  Table component to implement each use cases.
+                </li>
+                <li>
+                  Handled AUTH using JWT token system provided by the backend
+                  developer
+                </li>
+                <li>
+                  Everything broken down into smaller components whenever
+                  possible.
+                </li>
+                <li>
+                  It was a little difficult to collaborate with employees in
+                  different time zones, so we conducted regular catch-ups to
+                  evaluate the progress and streamline the client&rsquo;s
+                  requirements. I was able to collaborate closely with the
+                  backend developer, and occasionally we had a contentious
+                  discussion about some technical roadblocks, for instance when
+                  the client needed to remove case sensitivity from the email
+                  but we had to display the same email that the user had entered
+                  in the front-end. BE developer indicated that it&rsquo;s a
+                  little challenging to accomplish because he&rsquo;s using a
+                  NoSQL database (MongoDB). In light of this, I did some
+                  research and came up with a solution that allows us to use
+                  regex when searching in MongoDB.
+                </li>
+                <li>
+                  I succeeded in learning how to put light-dark mode switching
+                  into practice. I was able to learn about many technologies
+                  that will make it easier for me to build, including
+                  react-timer, react-pdf, framer-motion, and google-chart. Since
+                  I am the only frontend developer working on this project, I
+                  must implement everything from scratch and choose the
+                  appropriate architecture. Therefore, it is a big obligation.
+                  this project helped me to level up my experience as a
+                  front-end developer.
+                </li>
+              </ul>
+              <p>
+                <br />
+                Technologies used: JavaScript, ReactJs, NextJs, HTML5, SCSS,
+                MUI, Next-Auth, Jira, Axios, Firebase
+              </p>
+            </div>
           </div>
         </div>
         <motion.div variants={item} className={_styles.projectImages}>
