@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    background-color: #000;
-  
 }
 .projectHeader{
     display: flex;
@@ -13,8 +11,7 @@
     align-items: center;
     margin-right: auto;
     font-size: 1.5em;
-    margin-left: 2em;
-    margin-top: 3em;
+    margin-left: 3.2em;
 }
 
 .projectItem{
@@ -23,6 +20,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 30px 30px 2em;
+    margin-top: 90px;
 }
 
 .details{
@@ -31,6 +29,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    margin-left: 60px;
 }
 
 .projectImages{

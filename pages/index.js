@@ -33,12 +33,13 @@ export default function Home() {
 
   return (
     <React.Fragment>
+      <HomePageModal />
       <DefaultLayout isActive={isActive}>
         <div className={styles.mySelfImage}>
           <div div className={styles.homePageIntro}>
-            <h1>
+            <label>
               <Greetings />
-            </h1>
+            </label>
             <p>
               A driven guy with a positive outlook. I don&rsquo;t even strive to
               be flawless since I am not. I think that being imperfect makes you
@@ -79,7 +80,7 @@ const Greetings = () => {
   return (
     <span>
       {greetings.split("").map(function (char, index) {
-        let style = { "animation-delay": 0.5 + index / 10 + "s" };
+        let style = { "animation-delay": 6 + index / 10 + "s" };
         return (
           <>
             <span aria-hidden="true" key={index} style={style}>
@@ -90,5 +91,23 @@ const Greetings = () => {
         );
       })}
     </span>
+  );
+};
+
+const HomePageModal = () => {
+  return (
+    <React.Fragment>
+      <div className="container">
+        <div className="top-part"></div>
+        <div className="logo">
+          <Image
+            src="/images/myLogo.svg"
+            width={100}
+            height={100}
+            alt="my-logo"
+          />
+        </div>
+      </div>
+    </React.Fragment>
   );
 };

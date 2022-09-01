@@ -1,26 +1,88 @@
 .navBarContainer{
     display: flex;
-    position: sticky;
-    align-self: flex-start;
+    position: absolute;
+    align-self: center;
     flex-direction: column;
     justify-content: center;
     top: 0;
     margin: 0;
-    padding: 10px;
-    height: 3.5em;
-    background-color: rgba(7,7,7,.93);
+    padding: 25px 25px 25px 15px;
+    height: 100%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
-.navbarLinks{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 3.5em;
-    font-size: 20px;
+
+.showHalf {
+  left: -180px;
+  position: fixed;
+  cursor: pointer;
 }
 
+.showHalf {
+  .navbarLinks{
+    align-items: flex-end;
+  }
+}
+
+.showHalf:hover {
+  animation: show-flier 1s linear 1 alternate forwards;
+}
+
+.navbarLinks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 25px;
+    gap: 50px;
+}
 .link{
-    padding-left: 15px;
-    padding-right: 15px;
+    opacity: 0 ;
+    animation: fadeIn 0.75s forwards;
+ a {
+    background: -webkit-linear-gradient(rgba(128,128,128, 0.5), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+}
+
+.link:hover{
+    transform: rotate(0deg) scale(1.12) translateX(10px);
+    transition: 0.5s;
+    a {
+    background: -webkit-linear-gradient(rgba(128,128,128, 0.5), rgb(216, 111, 13));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }   
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes navBackground {
+    0% {
+      opacity: 0;
+      background-color: transparent;
+    }
+    100% {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+@keyframes show-flier {
+  0% {
+    left: -180px
+  }
+  100% {
+  left: 0;
+  background: #000;
+  }
 }

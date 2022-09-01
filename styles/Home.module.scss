@@ -4,8 +4,10 @@ min-height: 100vh;
 background-color: #000;
 }
 .mySelfImage{
-  min-height: 100vh;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .imagePosition {
@@ -17,13 +19,20 @@ background-color: #000;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 12em;
+  justify-content: center;
+  align-items: flex-start;
   margin-left: 5em;
   gap: 25px;
-  h1 span span{
-    opacity: 0;
-    animation: move-text-color 0.75s forwards;
+  top: 0;
+  bottom: 0;
+  label span span{
+    font-size: 3.20em;
+    opacity: 0 ;
+    animation: move-text-color 0.75s  forwards;
+  }
+
+  p{
+    animation: me-paragraph 1s 10s backwards;
   }
 }
 
@@ -61,5 +70,15 @@ background-color: #000;
     bottom: 0;
     opacity: 1;
     color: #cb3126;
+  }
+}
+
+@keyframes me-paragraph {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
   }
 }

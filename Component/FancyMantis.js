@@ -47,28 +47,7 @@ const gallery = [
 
 const FancyMantis = () => {
   return (
-    <DefaultLayout>
-      <div className={styles.goBack}>
-        <Link href="/projects">
-          <a>
-            {" "}
-            <span
-              style={{
-                display: "inline-block",
-                verticalAlign: "middle",
-              }}
-            >
-              <Image
-                src="/images/yellowHeart/caret-left-icon-16.svg"
-                width={20}
-                height={20}
-                alt="arrow-right"
-              />
-            </span>
-            Projects Page
-          </a>
-        </Link>
-      </div>
+    <DefaultLayout isActive="projects">
       <motion.div
         variants={container}
         initial="hidden"
@@ -100,58 +79,57 @@ const FancyMantis = () => {
             </p>
             <h3>Story about the project</h3>
             <div className={styles.projectDetails}>
-              <ul>
-                <li>
+              <motion.ul variants={container} initial="hidden" animate="show">
+                <motion.li variants={item}>
                   Responsible for creating a Frontend React Application with
                   another backend developer. communicating with the backend
                   developer on Slack. Assigned tasks on Jira to keep track of
                   everything.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   Responsible for reacting to a modern Dashboard based on the
                   given XD design.
                   <dd>- User Panel</dd>
                   <dd>- Admin Panel</dd>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   Implemented Sortable/Searchable table component; used general
                   Table component to implement each use cases.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   Handled AUTH using JWT token system provided by the backend
                   developer
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   Everything broken down into smaller components whenever
                   possible.
-                </li>
-                <li>
-                  It was a little difficult to collaborate with employees in
-                  different time zones, so we conducted regular catch-ups to
-                  evaluate the progress and streamline the client&rsquo;s
-                  requirements. I was able to collaborate closely with the
-                  backend developer, and occasionally we had a contentious
-                  discussion about some technical roadblocks, for instance when
-                  the client needed to remove case sensitivity from the email
-                  but we had to display the same email that the user had entered
-                  in the front-end. BE developer indicated that it&rsquo;s a
-                  little challenging to accomplish because he&rsquo;s using a
-                  NoSQL database (MongoDB). In light of this, I did some
-                  research and came up with a solution that allows us to use
-                  regex when searching in MongoDB.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
+                  Collaborating with people in different time zone was a bit
+                  challenging, hence we had a regular catch-up to assess the
+                  progress and streamline the client&rsquo;s requirements. I was
+                  able to work closely with the Backend developer. Having
+                  experience working with Be technologies really helped me to
+                  get things done as I needed. For instance when the client
+                  needs to remove the case sensitivity of the email but we have
+                  to showcase the same email which the user included in the
+                  front end. BE developer mentioned that it&rsquo;s a bit hard
+                  to achieve since he is using NoSQL DB (MongoDB) In light of
+                  this, I did some research and came up with a solution that
+                  allows us to use regex when searching in MongoDB.
+                </motion.li>
+                <motion.li variants={item}>
                   I succeeded in learning how to put light-dark mode switching
                   into practice. I was able to learn about many technologies
                   that will make it easier for me to build, including
                   react-timer, react-pdf, framer-motion, and google-chart. Since
                   I am the only frontend developer working on this project, I
                   must implement everything from scratch and choose the
-                  appropriate architecture. Therefore, it is a big obligation.
-                  this project helped me to level up my experience as a
-                  front-end developer.
-                </li>
-              </ul>
+                  appropriate architecture and Technologies. Therefore, it is a
+                  big obligation. this project helped me to level up my
+                  experience as a front-end developer.
+                </motion.li>
+              </motion.ul>
               <p>
                 <br />
                 Technologies used: JavaScript, ReactJs, NextJs, HTML5, SCSS,

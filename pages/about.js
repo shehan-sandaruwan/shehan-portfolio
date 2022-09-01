@@ -45,11 +45,11 @@ const About = () => {
             <motion.p>
               I was born and raised in Sri Lanka 🇱🇰, <br />
               I&rsquo;ve been working as a professional software Engineer since
-              2019 when I started my career as a full stack Engineer and then
-              moved my Major straight to the Front End. I strive to create
-              elegant solutions that surprise and delight users while keeping
-              complex technical dependencies in mind for implementation,
-              scalability, and developer sanity. <br />
+              2019. I started my career as a full stack Engineer and then moved
+              my Major straight to the Front End. I strive to create elegant
+              solutions that surprise and delight users while keeping complex
+              technical dependencies in mind for implementation, scalability,
+              and developer sanity. <br />
               I&rsquo;ve worked in local and remote agile teams where I actively
               participate in developing front-end features (both UI and
               Functional Implementation). I always challenge my comfort zone and

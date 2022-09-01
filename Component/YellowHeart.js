@@ -47,28 +47,7 @@ const gallery = [
 
 const YellowHeart = () => {
   return (
-    <DefaultLayout>
-      <div className={styles.goBack}>
-        <Link href="/projects">
-          <a>
-            {" "}
-            <span
-              style={{
-                display: "inline-block",
-                verticalAlign: "middle",
-              }}
-            >
-              <Image
-                src="/images/yellowHeart/caret-left-icon-16.svg"
-                width={20}
-                height={20}
-                alt="arrow-right"
-              />
-            </span>
-            Projects Page
-          </a>
-        </Link>
-      </div>
+    <DefaultLayout isActive="projects">
       <motion.div
         variants={container}
         initial="hidden"
@@ -99,39 +78,39 @@ const YellowHeart = () => {
             </p>
             <h3>Story about the project</h3>
             <div className={styles.projectDetails}>
-              <ul>
-                <li>
+              <motion.ul variants={container} initial="hidden" animate="show">
+                <motion.li variants={item}>
                   Implemented web portal UI component by providing more
                   significant attention to the details.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   I spoke with the client and the business analyst to streamline
                   precise needs. And I raised the concern and the blocker in
                   Product sync to get broader and more sustainable solutions.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   I was given difficult tasks right away, such as creating a
                   Header banner configuration unit, so I had to adapt quickly
                   and become comfortable with the project. Therefore, it was
                   quite challenging.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   I had to put in a lot of work to learn CSS/SCSS and HTML5 when
                   I first started working on this project because I didn&rsquo;t
                   have enough expertise with them. So now that I&rsquo;m in this
                   position, I can comfortably use CSS/HTML5, and this experience
                   has been a tremendous addition to my résumé.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   I was able to use some of the advanced ReactJS
                   functionalities, such as useCallback hooks when using event
                   listeners and React HOC, which allowed me to apply my
                   theoretical knowledge and improve my React skills.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item}>
                   Collaboration and communication help move things along faster.
-                </li>
-              </ul>
+                </motion.li>
+              </motion.ul>
               <p>
                 <br />
                 Technologies used: JavaScript, ReactJs, NextJs, HTML5, SCSS,
