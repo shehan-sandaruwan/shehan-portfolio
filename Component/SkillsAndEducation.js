@@ -208,6 +208,7 @@ const imagesDevFest = [
   },
 ];
 
+// eslint-disable-next-line react/display-name
 const AwardsHackLn = forwardRef((props, ref) => {
   return (
     <React.Fragment>
@@ -251,6 +252,7 @@ const AwardsHackLn = forwardRef((props, ref) => {
   );
 });
 
+// eslint-disable-next-line react/display-name
 const AwardsDevFest = forwardRef((props, ref) => {
   return (
     <React.Fragment>
