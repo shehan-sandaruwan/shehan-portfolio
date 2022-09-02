@@ -14,14 +14,17 @@ html{
 }
 body {
   background-color: #000;
-  background-image: url("/images/home-page.png");
+  background: url("/images/home-page.png") no-repeat center center fixed;
   background-position: 50% 0;
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'Work Sans', sans-serif;
   @include md() {
-    background-position: 100%;
+    background-position: 100% 100%;
   }
 }
 

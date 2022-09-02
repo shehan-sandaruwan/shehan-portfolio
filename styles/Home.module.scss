@@ -57,6 +57,15 @@ background-color: #000;
   p{
     line-height: 1.35em;
   }
+  @include sm() {
+    top: 2em;
+    width: 100%;
+    padding: 10px;
+    margin-left: 10em;
+    h1{
+      text-align: center;
+    }
+  }
 }
 
 @keyframes move-text-color {
