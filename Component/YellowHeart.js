@@ -58,10 +58,7 @@ const YellowHeart = () => {
             "linear-gradient(to right,  rgba(255,0,0,0), #ffd100)",
         }}
       >
-        <div
-          className={_styles.details}
-          style={{ alignItems: "flex-start", display: "block" }}
-        >
+        <div className={_styles.details}>
           <div className={_styles.logo}>
             <Image
               src="/images/yellowHeart/logo-mobile.svg"

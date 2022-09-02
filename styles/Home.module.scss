@@ -1,3 +1,4 @@
+@import "mixins";
 
 .container{
 min-height: 100vh;
@@ -33,6 +34,10 @@ background-color: #000;
 
   p{
     animation: me-paragraph 1s 10s backwards;
+  }
+
+  @include sm() {
+    padding: 20px;
   }
 }
 

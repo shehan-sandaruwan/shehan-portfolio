@@ -58,10 +58,7 @@ const FancyMantis = () => {
             "linear-gradient(to right, rgba(255,0,0,0), #2F69FE)",
         }}
       >
-        <div
-          className={_styles.details}
-          style={{ alignItems: "flex-start", display: "block" }}
-        >
+        <div className={_styles.details}>
           <div className={_styles.logo}>
             <Image
               src="/images/yellowHeart/fancy-logo.svg"

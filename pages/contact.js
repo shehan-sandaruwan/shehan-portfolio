@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import DefaultLayout from "../Component/Layout/DefaultLayout";
-import MyProjects from "../Component/MyProjects";
+import MyContact from "../Component/MyContact";
 
-const Projects = () => {
+const Contact = () => {
   const [isActive, setIsActive] = useState("");
   useEffect(() => {
-    setIsActive("projects");
+    setIsActive("contact");
 
     return () => {
       setIsActive("");
@@ -15,10 +15,10 @@ const Projects = () => {
   return (
     <React.Fragment>
       <DefaultLayout isActive={isActive}>
-        <MyProjects />
+        <MyContact />
       </DefaultLayout>
     </React.Fragment>
   );
 };
 
-export default Projects;
+export default Contact;

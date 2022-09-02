@@ -1,0 +1,90 @@
+@import "mixins";
+
+.contactConatiner{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    margin-left: 150px;
+    margin-top: 50px;
+    gap: 65px;
+    @include sm() {
+        margin-left: 80px;
+        padding: 20px;
+    }
+}
+
+.contactHeader{
+    font-size: 3.2em;
+    font-weight: 600;
+    color: #fff;
+    @include sm() {
+        text-align: center;
+    }
+}
+
+.downloadResume{
+    text-align: center;
+    width: fit-content;
+    padding: 20px 30px 20px 30px;
+    border-radius: 50px;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+        -45deg, 
+        rgba(59,173,227,1) 0%, 
+        rgba(87,111,230,1) 25%, 
+        rgba(152,68,183,1) 51%, 
+        rgba(255,53,127,1) 100%
+  );  
+    animation: AnimateBG 10s ease infinite;
+    label{
+        font-size: 1.2em;
+        color: #fff;
+    }
+}
+
+.contactConatiner a:hover {
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+
+.contactDetails{
+    color: #fff;
+    font-size: 1.2em;
+    div img{
+        background-color: #fff;
+        border-radius: 100%;
+       
+    }
+    
+}
+
+.border{
+    img{
+    border: 2px solid #fff !important;
+    }
+}
+
+.contactItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.socialMedia{
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 80px;
+}
+
+@keyframes AnimateBG { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }

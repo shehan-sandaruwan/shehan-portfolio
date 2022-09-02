@@ -58,10 +58,7 @@ const Pro11Chart = () => {
             "linear-gradient(to right, rgba(255,0,0,0), #4DBBEB)",
         }}
       >
-        <div
-          className={_styles.details}
-          style={{ alignItems: "flex-start", display: "block" }}
-        >
+        <div className={_styles.details}>
           <div className={_styles.logo}>
             <Image
               src="/images/yellowHeart/dfn-logo.svg"

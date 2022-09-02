@@ -1,3 +1,5 @@
+@import "mixins";
+
 .skillsAndEducation{
     display: flex;
     flex-direction: column;
@@ -7,12 +9,19 @@
     margin-top: 50px;
     max-width: 60%;
     padding-bottom: 50px;
+    @include sm() {
+        margin-left: 50px;
+        max-width: 100%;
+    }
 }
 
 .techContainer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @include sm() {
+        padding: 15px 25px 30px 6em;
+    }
 }
 
 .techItems {
@@ -102,6 +111,10 @@
     height: 300px;
     margin: 25px;
     background: linear-gradient(to right, #000, #A62349, transparent);
+    @include sm() {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
 }
 
 .internShip{
@@ -113,6 +126,10 @@
     height: 300px;
     margin: 25px;
     background: linear-gradient(to right, #000, #D36B00, transparent);
+    @include sm() {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
 }
 
 .degreeImage{
@@ -160,6 +177,9 @@
     flex-direction: row;
     justify-content: space-between;
     box-shadow: 20px 20px 10px black ;
+    @include sm(){
+        flex-direction: column;
+    }
   
 }
 
@@ -198,6 +218,10 @@
     flex-direction: row;
     justify-content: space-between;
     background: linear-gradient(to right, #000, #A62349, transparent);
+    @include sm(){
+        flex-direction: column;
+    }
+  
 }
 
 .devFestContainer {
@@ -205,6 +229,10 @@
     flex-direction: row;
     justify-content: space-between;
     background: linear-gradient(to right, #000, #D36B00, transparent);
+    @include sm(){
+        flex-direction: column;
+    }
+  
 }
 
 @keyframes move-text-color {
@@ -231,6 +259,10 @@
   .images{
     display: flex;
     flex-direction: column;
+    @include sm() {
+        justify-content: center;
+        align-items: center;
+    }
   }
 
   .imagesBackground{
