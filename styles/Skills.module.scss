@@ -219,6 +219,7 @@
     justify-content: space-between;
     background: linear-gradient(to right, #000, #A62349, transparent);
     @include sm(){
+        min-width: 100%;
         flex-direction: column;
     }
   
@@ -230,6 +231,7 @@
     justify-content: space-between;
     background: linear-gradient(to right, #000, #D36B00, transparent);
     @include sm(){
+        min-width: 100%;
         flex-direction: column;
     }
   
@@ -271,11 +273,17 @@
     background-size: cover;
     cursor: pointer;
     // animation:  image-fitting 2s linear none;
+    @include sm() {
+        width: 100%;
+    }
   }
 
   .imagesBackground:hover {
     transform: scale(1.5);
     transition: 1s;
+    @include sm() {
+        transform: scale(1.2);
+    }
   }
 
   .awardsContainerMain{
@@ -295,19 +303,18 @@
     }
   }
 
-  @keyframes imageFitting {
+@keyframes imageFitting {
     0% {
-      opacity: 0;
-      transform: translateX(100px);
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(10px);
+        
     }
     
-    50% {
-        opacity: 0.5;
-        transform: translateX(50px);
-    }
-  
     100% {
-      opacity: 1;
-      transform: translateX(0px);
+    opacity: 1;
+    transform: translateY(0px);
     }
-  }
+}
+    
+  
