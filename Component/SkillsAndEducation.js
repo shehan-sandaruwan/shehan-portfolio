@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState, forwardRef } from "react";
 import styles from "../styles/Skills.module.scss";
 import Image from "next/image";
-import { AnimationOnScroll } from "react-animation-on-scroll";
-import "animate.css/animate.min.css";
 
 const techStack = [
   {

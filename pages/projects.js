@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import DefaultLayout from "../Component/Layout/DefaultLayout";
 import MyProjects from "../Component/MyProjects";
 
