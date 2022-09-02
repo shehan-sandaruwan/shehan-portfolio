@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import DefaultLayout from "../Component/Layout/DefaultLayout";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 const container = {
