@@ -62,7 +62,7 @@ const MyProjects = (props) => {
         animate="show"
       >
         <motion.div className={styles.projectHeader} variants={item}>
-          <h1>Projects I Worked on</h1>
+          <h1>Projects I&rsquo;ve Developed</h1>
         </motion.div>
         <motion.div style={{ width: "100%" }} variants={item}>
           {projects.map((project) => {

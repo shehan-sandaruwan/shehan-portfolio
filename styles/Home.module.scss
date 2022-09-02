@@ -1,11 +1,14 @@
+@import "mixins";
 
 .container{
 min-height: 100vh;
 background-color: #000;
 }
 .mySelfImage{
-  min-height: 100vh;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .imagePosition {
@@ -17,10 +20,25 @@ background-color: #000;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 12em;
+  justify-content: center;
+  align-items: flex-start;
   margin-left: 5em;
   gap: 25px;
+  top: 0;
+  bottom: 0;
+  label span span{
+    font-size: 3.20em;
+    opacity: 0 ;
+    animation: move-text-color 0.75s  forwards;
+  }
+
+  p{
+    animation: me-paragraph 1s 10s backwards;
+  }
+
+  @include sm() {
+    padding: 20px;
+  }
 }
 
 .aboutMe{
@@ -29,7 +47,7 @@ background-color: #000;
   gap: 25px;
   flex: 1;  
   flex-direction: column;
-  width: 60ch;
+  width: 60%;
   top: 8em;
   margin-left: 5em;
   padding-bottom: 5em;
@@ -38,5 +56,34 @@ background-color: #000;
   }
   p{
     line-height: 1.35em;
+  }
+}
+
+@keyframes move-text-color {
+  0% {
+    bottom: -0.2em;
+    opacity: 0;
+    color: #3E5C76;
+  }
+  
+  50% {
+    bottom: 0.2em;
+    color: #EC058E;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+    color: #cb3126;
+  }
+}
+
+@keyframes me-paragraph {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
   }
 }

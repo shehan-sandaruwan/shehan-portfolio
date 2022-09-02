@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import NavBar from "../Component/Navbar";
+import DefaultLayout from "../Component/Layout/DefaultLayout";
 import MyProjects from "../Component/MyProjects";
 
 const Projects = () => {
@@ -14,8 +14,9 @@ const Projects = () => {
   }, []);
   return (
     <React.Fragment>
-      <NavBar isActive={isActive} />
-      <MyProjects />
+      <DefaultLayout isActive={isActive}>
+        <MyProjects />
+      </DefaultLayout>
     </React.Fragment>
   );
 };

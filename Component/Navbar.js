@@ -1,61 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/NavBar.module.scss";
 import Link from "next/link";
+import Image from "next/image";
+
+const links = [
+  {
+    displayName: "Home",
+    path: "/",
+    key: "home",
+  },
+  {
+    displayName: "About",
+    path: "/about",
+    key: "about",
+  },
+  {
+    displayName: "Projects",
+    path: "/projects",
+    key: "projects",
+  },
+  {
+    displayName: "Skills & Education",
+    path: "/skills",
+    key: "skills",
+  },
+  {
+    displayName: "Contact",
+    path: "/contact",
+    key: "contact",
+  },
+];
 
 const NavBar = (props) => {
   return (
     <React.Fragment>
-      <nav className={styles.navBarContainer}>
-        <div className={styles.navbarLinks}>
-          <div
-            className={
-              styles.link + `${props.isActive === "home" ? " active" : ""}`
-            }
-          >
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </div>
-          <div
-            className={
-              styles.link + `${props.isActive === "about" ? " active" : ""}`
-            }
-          >
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </div>
-          <div
-            className={
-              styles.link + `${props.isActive === "projects" ? " active" : ""}`
-            }
-          >
-            <Link href="/projects">
-              <a>Projects</a>
-            </Link>
-          </div>
-          <div
-            className={
-              styles.link + `${props.isActive === "skills" ? " active" : ""}`
-            }
-          >
-            <Link href="/">
-              <a>Skils &#38; Education</a>
-            </Link>
-          </div>
-          <div
-            className={
-              styles.link +
-              " nav-items" +
-              `${props.isActive === "contact" ? " active" : ""}`
-            }
-          >
-            <Link href="/">
-              <a>Contact</a>
-            </Link>
-          </div>
-        </div>
+      <nav
+        className={
+          styles.navBarContainer +
+          ` ${props.isActive !== "home" ? styles.showHalf : ""}`
+        }
+      >
+        <NavbarHomePage isActive={props.isActive} />
       </nav>
+    </React.Fragment>
+  );
+};
+
+const NavbarHomePage = (props) => {
+  const delay = props.isActive !== "home" ? 0 : 8;
+  return (
+    <div className={styles.navbarLinks}>
+      {links.map((item, index) => {
+        const style = { "animation-delay": delay + index / 10 + "s" };
+        return (
+          <React.Fragment key={index}>
+            <div
+              className={
+                styles.link + `${props.isActive === item.key ? " active" : ""}`
+              }
+              style={style}
+            >
+              <Link href={item.path}>
+                <a>{item.displayName}</a>
+              </Link>
+            </div>
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+};
+
+const NavbarOtherPages = (props) => {
+  const [isShowMenuDropDown, setIsShowMenuDropDown] = useState(false);
+
+  const onClickMoreMenu = () => {
+    setIsShowMenuDropDown(true);
+  };
+  return (
+    <React.Fragment>
+      <div className={`more-menu ${isShowMenuDropDown ? "disabled" : ""}`}>
+        <Image
+          src="/images/more-menu.svg"
+          width={100}
+          height={100}
+          alt="more-menu"
+          onClick={onClickMoreMenu}
+        />
+      </div>
+      {isShowMenuDropDown && (
+        <nav className={styles.navBarContainer}>
+          <NavbarHomePage isActive={props.isActive} />
+        </nav>
+      )}
     </React.Fragment>
   );
 };

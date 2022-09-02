@@ -1,20 +1,24 @@
+@import "mixins";
+
 .projectContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    background-color: #000;
-  
 }
 .projectHeader{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    margin-right: auto;
     font-size: 1.5em;
-    margin-left: 2em;
-    margin-top: 3em;
+    @include xl() {
+        flex-direction: column;
+        text-align: center;
+        h1 {
+            font-size: 2.2em !important;
+        }
+    }
 }
 
 .projectItem{
@@ -23,6 +27,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 30px 30px 2em;
+    margin-top: 90px;
+    @include xl() {
+        margin-top: 50px;
+        gap: 15px;
+        flex-direction: column;
+        padding: 30px 30px 30px 6em;
+    }
 }
 
 .details{
@@ -31,6 +42,15 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    margin-left: 60px;
+    @include xl() {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 .projectImages{
@@ -56,4 +76,11 @@
     flex-direction: column;
     width: 60ch;
     gap: 10px;
+    @include xl() {
+        align-items: center;
+        width: 100%;
+        h1{
+            font-size: 2.2em;;
+        }
+    }
 }

@@ -47,28 +47,7 @@ const gallery = [
 
 const Pro11Chart = () => {
   return (
-    <DefaultLayout>
-      <div className={styles.goBack}>
-        <Link href="/projects">
-          <a>
-            {" "}
-            <span
-              style={{
-                display: "inline-block",
-                verticalAlign: "middle",
-              }}
-            >
-              <Image
-                src="/images/yellowHeart/caret-left-icon-16.svg"
-                width={20}
-                height={20}
-                alt="arrow-right"
-              />
-            </span>
-            Projects Page
-          </a>
-        </Link>
-      </div>
+    <DefaultLayout isActive="projects">
       <motion.div
         variants={container}
         initial="hidden"
@@ -79,10 +58,7 @@ const Pro11Chart = () => {
             "linear-gradient(to right, rgba(255,0,0,0), #4DBBEB)",
         }}
       >
-        <div
-          className={_styles.details}
-          style={{ alignItems: "flex-start", display: "block" }}
-        >
+        <div className={_styles.details}>
           <div className={_styles.logo}>
             <Image
               src="/images/yellowHeart/dfn-logo.svg"
@@ -100,38 +76,40 @@ const Pro11Chart = () => {
               at greatly enhancing the user experience and simplifying &#38;
               speeding the investment decision making process.
             </p>
-            <h3>Duties</h3>
-            <ul>
-              <li>
-                Responsible for developed and designing Chart core
-                functionalities.
-              </li>
-              <li>
-                Different assessment elements and methodologies have been
-                developed to aid the stock markets&rsquo; complex
-                decision-making process.
-              </li>
-              <li>
-                Fixing production issues while also taking part in the
-                application&rsquo;s maintenance process was included in the
-                daily schedule.
-              </li>
-              <li>
-                Participated in client meetings as a core developer of the Chart
-                to provide visibility of the implemented functionalities and
-                Support clients to understand the process seamlessly.
-              </li>
-              <li>
-                Dom manipulation, Handling HTML5 canvas, Performance
-                enhancement, and implementation of critical data processing
-                logic were part of my role.
-              </li>
-            </ul>
-            <p>
-              Technologies used: JavaScript, PixiJs, HTML5, CSS, Jira, Design
-              Patterns (Singleton, Decorator, Factory, Observable)
-            </p>
-            <p>Tags: #Agile-mindset #GitFlow-WorkFlow</p>
+            <h3>Story about the project</h3>
+            <div className={styles.projectDetails}>
+              <motion.ul variants={container} initial="hidden" animate="show">
+                <motion.li variants={item}>
+                  Responsible for developed and designing Chart core
+                  functionalities.
+                </motion.li>
+                <motion.li variants={item}>
+                  Different assessment elements and methodologies have been
+                  developed to aid the stock markets&rsquo; complex
+                  decision-making process.
+                </motion.li>
+                <motion.li variants={item}>
+                  Fixing production issues while also taking part in the
+                  application&rsquo;s maintenance process was included in the
+                  daily schedule.
+                </motion.li>
+                <motion.li variants={item}>
+                  Participated in client meetings as a core developer of the
+                  Chart to provide visibility of the implemented functionalities
+                  and Support clients to understand the process seamlessly.
+                </motion.li>
+                <motion.li variants={item}>
+                  Dom manipulation, Handling HTML5 canvas, Performance
+                  enhancement, and implementation of critical data processing
+                  logic were part of my role.
+                </motion.li>
+              </motion.ul>
+              <p>
+                <br />
+                Technologies used: JavaScript, PixiJs, HTML5, CSS, Jira, Design
+                Patterns (Singleton, Decorator, Factory, Observable)
+              </p>
+            </div>
           </div>
         </div>
         <motion.div variants={item} className={_styles.projectImages}>
