@@ -14,7 +14,7 @@ html{
 }
 body {
   background-color: #000;
-  background-image: url("/images/home-page-ex.png");
+  background-image: linear-gradient(0deg,#000,transparent 70%,transparent),url("/images/home-page-ex.png");
   background-position: 50% 0;
   background-size: cover;
   -webkit-background-size: cover;
@@ -24,7 +24,9 @@ body {
   background-attachment: fixed;
   font-family: 'Work Sans', sans-serif;
   @include md() {
-    background-position: 85% 50%;
+    background-size: auto,cover;
+    background-repeat: no-repeat;
+    background-position: 0 0,85% 50%;
   }
 }
 
