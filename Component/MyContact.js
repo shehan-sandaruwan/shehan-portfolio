@@ -43,7 +43,7 @@ const MyContact = (props) => {
               width={40}
               height={40}
               src="/images/mail.png"
-              alt="home address"
+              alt="mail address"
             />{" "}
             <a
               href="mailto:shehan.k.dinuka@gmail.com"

@@ -28,11 +28,13 @@ background-color: #000;
   bottom: 0;
   label span span{
     font-size: 3.20em;
+    font-weight: 600;
     opacity: 0 ;
     animation: move-text-color 0.75s  forwards;
   }
 
   p{
+    font-weight: 500;
     animation: me-paragraph 1s 10s backwards;
   }
 

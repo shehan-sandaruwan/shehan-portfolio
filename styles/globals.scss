@@ -14,7 +14,7 @@ html{
 }
 body {
   background-color: #000;
-  background: url("/images/home-page.png") no-repeat center center fixed;
+  background-image: url("/images/home-page-ex.png");
   background-position: 50% 0;
   background-size: cover;
   -webkit-background-size: cover;
@@ -24,7 +24,7 @@ body {
   background-attachment: fixed;
   font-family: 'Work Sans', sans-serif;
   @include md() {
-    background-position: 100% 100%;
+    background-position: 85% 50%;
   }
 }
 
@@ -122,6 +122,7 @@ ul li {
 
   .learn-more{
     font-size: 20px;
+    font-weight: 600;
     animation: me-learn-more 1s 11s backwards;
   }
 
