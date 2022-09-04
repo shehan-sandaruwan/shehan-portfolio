@@ -106,7 +106,7 @@ const FancyMantis = () => {
                   challenging, hence we had a regular catch-up to assess the
                   progress and streamline the client&rsquo;s requirements. I was
                   able to work closely with the Backend developer. Having
-                  experience working with Be technologies really helped me to
+                  experience working with BE technologies really helped me to
                   get things done as I needed. For instance when the client
                   needs to remove the case sensitivity of the email but we have
                   to showcase the same email which the user included in the
