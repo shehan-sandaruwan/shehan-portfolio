@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DefaultLayout from "../Component/Layout/DefaultLayout";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import Head from "next/head";
 import Link from "next/link";
 
 const container = {
@@ -32,6 +33,10 @@ export default function Home() {
 
   return (
     <React.Fragment>
+      <Head>
+        <title>shehan.is</title>
+        <link rel="icon" href="/myLogo.png" />
+      </Head>
       <HomePageModal />
       <DefaultLayout isActive={isActive}>
         <div className={styles.mySelfImage}>
