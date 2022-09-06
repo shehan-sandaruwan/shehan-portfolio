@@ -82,11 +82,12 @@ a {
   -webkit-text-fill-color: transparent !important;
 }
 
-a:hover {
-  transform: scale(1.2);
-  transition-duration: 2s;
-  color: var(--link-color-active);
-}
+a:hover{
+  span{
+    animation: move-right 1s both;
+  }
+  }
+
 
 ul li { 
   margin-top: 10px;
@@ -115,12 +116,36 @@ ul li {
     font-size: 20px;
   }
 
+  .go-next:hover {
+    a span{
+      animation: move-right 1s both !important;
+    }
+  }
+
+  .go-prev:hover {
+    a span{
+      animation: move-left 1s both !important;
+    }
+  }
+
   .go-next-prev{
     display: flex;
     flex-direction: row;
     justify-content:center;
     font-size: 20px;
-   gap: 24px;
+    gap: 24px;
+  }
+
+  .go-next-prev div:nth-child(1):hover {
+    a span{
+      animation: move-left 1s both !important;
+    }
+  }
+
+  .go-next-prev div:nth-child(2):hover {
+    a span{
+      animation: move-right 1s both !important;
+    }
   }
 
   .learn-more{
@@ -147,6 +172,24 @@ ul li {
   position: fixed;
   bottom: 0;
   right: 0;
+}
+
+@keyframes move-right {
+  from{
+    transform: none;
+  }
+to{
+  transform: scale(1.1) translateX(10px);
+}
+}
+
+@keyframes move-left {
+  from{
+    transform: none;
+  }
+to{
+  transform: scale(1.1) translateX(-10px);
+}
 }
 
   @keyframes triangle-top {
