@@ -150,7 +150,7 @@ const YellowHeart = () => {
           <Link href="/project-description/fancyMantis">
             <a>
               {" "}
-              Next <span className="mobile-view">Project</span>
+              Next <label className="mobile-view">Project</label>
               <span
                 style={{
                   display: "inline-block",
