@@ -183,7 +183,7 @@ const FancyMantis = () => {
                     alt="arrow-right"
                   />
                 </span>
-                Previouse Project
+                Previouse <span className="mobile-view">Project</span>
               </a>
             </Link>
           </div>
@@ -191,7 +191,7 @@ const FancyMantis = () => {
             <Link href="/project-description/pro11Chart">
               <a>
                 {" "}
-                Next Project
+                Next <span className="mobile-view">Project</span>
                 <span
                   style={{
                     display: "inline-block",

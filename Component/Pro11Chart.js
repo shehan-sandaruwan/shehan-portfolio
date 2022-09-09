@@ -159,7 +159,7 @@ const Pro11Chart = () => {
                   alt="arrow-right"
                 />
               </span>
-              Previouse Project
+              Previouse <span className="mobile-view">Project</span>
             </a>
           </Link>
         </div>

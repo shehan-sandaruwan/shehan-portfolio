@@ -272,7 +272,6 @@
     height: 200px;
     background-size: cover;
     cursor: pointer;
-    // animation:  image-fitting 2s linear none;
     @include sm() {
         width: 75%;
     }
