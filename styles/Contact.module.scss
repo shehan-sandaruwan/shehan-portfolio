@@ -36,7 +36,7 @@
         rgba(152,68,183,1) 51%, 
         rgba(255,53,127,1) 100%
   );  
-    animation: AnimateBG 10s ease infinite;
+    animation: AnimateBG 2s ease infinite;
     label{
         font-size: 1.2em;
         color: #fff;
@@ -44,7 +44,7 @@
 }
 
 .contactConatiner a:hover {
-    transform: scale(1.2);
+    transform: translateX(5px);
     transition-duration: 1s;
 }
 
@@ -98,3 +98,24 @@
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
   }
+
+  @keyframes shake {
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(1%);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-1%);
+    }
+    from,
+    to {
+      transform: none;
+    }
+  }
+  

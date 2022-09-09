@@ -91,7 +91,7 @@ const SkillsAndEducation = (props) => {
   return (
     <React.Fragment>
       <div className={styles.skillsAndEducation}>
-        <div className={styles.techContainer}>
+        {/* <div className={styles.techContainer}>
           <h1>Technical competency</h1>
           <div className={styles.techItems} ref={techStackRef}>
             {techStack.map((item, index) => {
@@ -123,7 +123,7 @@ const SkillsAndEducation = (props) => {
               );
             })}
           </div>
-        </div>
+        </div> */}
         <div className={styles.education}>
           <h1>Education</h1>
           <div
@@ -131,7 +131,8 @@ const SkillsAndEducation = (props) => {
             ref={educationRef}
             style={{
               animationName: `${viewPortRef.edu ? styles.techFitting : "none"}`,
-              animationDuration: "3s",
+              animationDelay: "3s",
+              animationDuration: "1s",
               animationFillMode: "forwards",
             }}
           >
@@ -225,15 +226,14 @@ const AwardsHackLn = forwardRef((props, ref) => {
           <div className={styles.images}>
             {imagesHackLn.map((item, index) => {
               return (
-                <React.Fragment KEY={index}>
+                <React.Fragment key={index}>
                   <div
                     className={styles.imagesBackground}
                     style={{
                       backgroundImage: `url(${item.path})`,
                       animationDelay: `${1 + index / 3}s`,
                       animationName: `${
-                        props.isVisible ? styles.imageFitting : "none"
-                      }`,
+                        props.isVisible ? styles.imageFitting : "none"}`,
                       animationDuration: "2s",
                       animationTimingFunction: "linear",
                       animationIterationCount: 1,
@@ -267,7 +267,7 @@ const AwardsDevFest = forwardRef((props, ref) => {
           <div className={styles.images}>
             {imagesDevFest.map((item, index) => {
               return (
-                <React.Fragment KEY={index}>
+                <React.Fragment key={index}>
                   <div
                     className={styles.imagesBackground}
                     style={{

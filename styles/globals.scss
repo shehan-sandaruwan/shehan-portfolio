@@ -163,8 +163,7 @@ ul li {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    background:#000;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background: #000;
     animation: triangle-top 5s 1s forwards;
   }
 
@@ -196,15 +195,17 @@ to{
     0%{
       width: 100vw;
       height: 100vh;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+   50%{
+    width: 50vw;
+    width: 50vh;
+    transform: scale (0.5);
     }
 
     100%{
       width: 0;
       height: 0;
-      position: absolute;
-      background:#000;
-      clip-path: polygon(0 0, 0 0, 0 0, 0 0)
     }
   }
 
@@ -234,6 +235,13 @@ to{
 
   .more-menu .disabled {
     display: none;
+  }
+
+  .mobile-view{
+    display: inline-block;
+    @include sm() {
+      display: none;
+    }
   }
 
   @keyframes more-menu {
