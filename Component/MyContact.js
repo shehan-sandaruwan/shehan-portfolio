@@ -9,7 +9,7 @@ const MyContact = (props) => {
         <div className={styles.contactHeader}>
           <label>Let&rsquo;s get in Touch</label>
         </div>
-        <a href="" target="_blank" rel="noreferrer">
+        <a href="/ShehanDinukaResume.pdf" target="_blank" rel="noreferrer">
           <div className={styles.downloadResume}>
             <label>View Resume</label>
           </div>
