@@ -103,6 +103,7 @@ const HomePageModal = () => {
     <React.Fragment>
       <div className="container">
         <div className="top-part"></div>
+        <div className="bottom-part"></div>
         <div className="logo">
           <Image
             src="/images/myLogo.svg"
