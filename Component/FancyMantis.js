@@ -117,14 +117,14 @@ const FancyMantis = () => {
                 </motion.li>
                 <motion.li variants={item}>
                   I succeeded in learning how to put light-dark mode switching
-                  into practice. I was able to learn about many technologies
-                  that will make it easier for me to build, including
-                  react-timer, react-pdf, framer-motion, and google-chart. Since
-                  I am the only frontend developer working on this project, I
-                  must implement everything from scratch and choose the
-                  appropriate architecture and Technologies. Therefore, it is a
-                  big obligation. this project helped me to level up my
-                  experience as a front-end developer.
+                  into practice using scss variable and data attribute. I was
+                  able to learn about many technologies that will make it easier
+                  for me to build, including react-timer, react-pdf,
+                  framer-motion, and google-chart. Since I am the only frontend
+                  developer working on this project, I must implement everything
+                  from scratch and choose the appropriate architecture and
+                  Technologies. Therefore, it is a big obligation. this project
+                  helped me to level up my experience as a front-end developer.
                 </motion.li>
               </motion.ul>
               <p>
