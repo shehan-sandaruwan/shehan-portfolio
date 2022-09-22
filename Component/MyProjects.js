@@ -37,6 +37,39 @@ const projects = [
   },
 ];
 
+const noteWorthyProject = [
+  {
+    name: "YellowHeart",
+    description: "Frontend developer",
+    index: 1,
+    imageUrl: "/images/yellowHeart/kol-page.png",
+    logoUrl: "/images/yellowHeart/logo-mobile.svg",
+    background: "linear-gradient(to right,  rgba(255,0,0,0), #ffd100)",
+    href: "/project-description/yellowHeart",
+    duration: "2021-09 - Present",
+  },
+  {
+    name: "Fancy-Mantis",
+    description: "Frontend developer - freelance",
+    index: 2,
+    imageUrl: "/images/yellowHeart/fancy-mantis.png",
+    logoUrl: "/images/yellowHeart/fancy-logo.svg",
+    background: "linear-gradient(to right, rgba(255,0,0,0), #2F69FE)",
+    href: "/project-description/fancyMantis",
+    duration: "2022-04 - Present",
+  },
+  {
+    name: "DFN-Pro-11",
+    description: "Frontend developer freelance",
+    index: 3,
+    imageUrl: "/images/yellowHeart/chart.svg",
+    logoUrl: "/images/yellowHeart/dfn-logo.svg",
+    background: "linear-gradient(to right, rgba(255,0,0,0), #4DBBEB)",
+    href: "/project-description/pro11Chart",
+    duration: "2019-03 - 2020-12",
+  },
+];
+
 const container = {
   hidden: { opacity: 0 },
   show: {
