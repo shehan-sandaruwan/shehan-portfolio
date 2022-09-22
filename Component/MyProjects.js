@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Projects.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,25 +53,71 @@ const item = {
 };
 
 const MyProjects = (props) => {
+  const yellowHeart = useRef(null);
+  const fancyMantis = useRef(null);
+  const dfn = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    const clientY = window.innerHeight;
+    if (yellowHeart.current && fancyMantis.current && dfn.current) {
+      const yhY = clientY - calculateBoundryClinet(yellowHeart);
+      const fmY = clientY - calculateBoundryClinet(fancyMantis);
+      const dfnY = clientY - calculateBoundryClinet(dfn);
+
+      yellowHeart.current.dataset.state =
+        yhY >= 200 ? calculateBoundryClinet(yellowHeart) && "animate" : "still";
+      fancyMantis.current.dataset.state =
+        fmY >= 200 ? calculateBoundryClinet(fancyMantis) && "animate" : "still";
+      dfn.current.dataset.state =
+        dfnY >= 200 ? calculateBoundryClinet(dfn) && "animate" : "still";
+    }
+  };
+
+  const calculateBoundryClinet = (ref) => {
+    const topValue = ref.current.getBoundingClientRect().top;
+
+    return topValue;
+  };
+
   return (
     <React.Fragment>
-      <motion.div
-        className={styles.projectContainer}
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        <motion.div className={styles.projectHeader} variants={item}>
-          <h1>Projects I&rsquo;ve Developed</h1>
-        </motion.div>
-        <motion.div style={{ width: "100%" }} variants={item}>
-          {projects.map((project) => {
+      <div className={styles.projectContainer}>
+        <div className={styles.projectHeader}>
+          <h1>Some Things I&rsquo;ve Built</h1>
+        </div>
+        <div style={{ width: "100%" }}>
+          {projects.map((project, index) => {
             return (
               <React.Fragment key={project.index}>
                 <div
                   className={styles.projectItem}
-                  style={{ backgroundImage: `${project.background}` }}
+                  ref={
+                    project.index === 1
+                      ? yellowHeart
+                      : project.index === 2
+                      ? fancyMantis
+                      : dfn
+                  }
+                  style={{ "--delay": index }}
                 >
+                  <div
+                    className={styles.projectImages}
+                    style={{ backgroundImage: `${project.background}` }}
+                  >
+                    <Image
+                      src={project.imageUrl}
+                      width={500}
+                      height={400}
+                      alt="project-images"
+                    />
+                  </div>
                   <div className={styles.details}>
                     <div className={styles.logo}>
                       <Image
@@ -107,20 +153,12 @@ const MyProjects = (props) => {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.projectImages}>
-                    <Image
-                      src={project.imageUrl}
-                      width={500}
-                      height={400}
-                      alt="project-images"
-                    />
-                  </div>
                 </div>
               </React.Fragment>
             );
           })}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </React.Fragment>
   );
 };

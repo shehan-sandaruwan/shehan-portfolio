@@ -110,7 +110,7 @@
     width: 500px;
     height: 300px;
     margin: 25px;
-    background: linear-gradient(to right, #000, #A62349, transparent);
+    // background: linear-gradient(to right, #000, #A62349, transparent);
     @include sm() {
         flex-direction: column-reverse;
         width: 100%;
@@ -125,7 +125,7 @@
     width: 500px;
     height: 300px;
     margin: 25px;
-    background: linear-gradient(to right, #000, #D36B00, transparent);
+    // background: linear-gradient(to right, #000, #D36B00, transparent);
     @include sm() {
         flex-direction: column-reverse;
         width: 100%;
@@ -217,7 +217,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: linear-gradient(to right, #000, #A62349, transparent);
+    // background: linear-gradient(to right, #000, #A62349, transparent);
     @include sm(){
         min-width: 100%;
         flex-direction: column;
@@ -229,7 +229,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: linear-gradient(to right, #000, #D36B00, transparent);
+    // background: linear-gradient(to right, #000, #D36B00, transparent);
     @include sm(){
         min-width: 100%;
         flex-direction: column;
