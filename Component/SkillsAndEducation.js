@@ -2,44 +2,58 @@ import React, { useRef, useEffect, useState, forwardRef } from "react";
 import styles from "../styles/Skills.module.scss";
 import Image from "next/image";
 
-const techStack = [
+const _techStack = [
   {
     name: "JavaScript",
+    id: "js",
     logo: "/images/skills/js.png",
     yearsOfExperiance: "Three plus years",
   },
   {
     name: "TypeScript",
+    id: "ts",
     logo: "/images/skills/typescript.png",
     yearsOfExperiance: "Six month",
   },
   {
     name: "ReactJs",
+    id: "Rjs",
     logo: "/images/skills/atom.png",
     yearsOfExperiance: "One plus years",
   },
   {
     name: "NextJs",
+    id: "Njs",
     logo: "/images/skills/next.png",
     yearsOfExperiance: "One plus years",
   },
   {
     name: "CSS/SCSS",
+    id: "css",
     logo: "/images/skills/css-3.png",
     yearsOfExperiance: "One plus years",
   },
   {
-    name: "HTML",
+    name: "HTML5",
+    id: "html",
     logo: "/images/skills/html-5.png",
     yearsOfExperiance: "One plus years",
   },
   {
     name: "MySql",
+    id: "mysql",
     logo: "/images/skills/mysql.png",
     yearsOfExperiance: "Six Month",
   },
   {
     name: "GitHub",
+    id: "github",
+    logo: "/images/skills/github.png",
+    yearsOfExperiance: "Three plus years",
+  },
+  {
+    name: "MUI",
+    id: "mui",
     logo: "/images/skills/github.png",
     yearsOfExperiance: "Three plus years",
   },
@@ -50,6 +64,7 @@ const SkillsAndEducation = (props) => {
   const educationRef = useRef(null);
   const hacklnRef = useRef(null);
   const hackdevRef = useRef(null);
+  const [techStack, setTechStack] = useState(_techStack);
 
   const [viewPortRef, setViewPortRef] = useState({
     tech: false,
@@ -57,6 +72,10 @@ const SkillsAndEducation = (props) => {
     hackL: false,
     hackD: false,
   });
+
+  useEffect(() => {
+    requestAnimationFrame(calculateLearp);
+  }, []);
 
   useEffect(() => {
     function handleScroll() {
@@ -88,54 +107,46 @@ const SkillsAndEducation = (props) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [techStack, educationRef, hackdevRef, hacklnRef]);
 
+  const calculateLearp = () => {
+    techStack.forEach((item) => {
+      const element = document.getElementById(item.id);
+      let currentPoint = { x: 0, y: 0 };
+
+      if (element?.getBoundingClientRect()) {
+        let { x, y } = element?.getBoundingClientRect();
+        const targetPoint = { x: x, y: y };
+        console.log(targetPoint);
+
+        if (targetPoint.y - currentPoint.y >= 1) {
+          currentPoint.x =
+            currentPoint.x + (targetPoint.x - currentPoint.x) * 0.5;
+          currentPoint.y =
+            currentPoint.y + (targetPoint.y - currentPoint.y) * 0.5;
+        }
+      }
+
+      element?.style.setProperty("--y", currentPoint.y);
+    });
+
+    requestAnimationFrame(calculateLearp);
+  };
+
   return (
     <React.Fragment>
       <div className={styles.skillsAndEducation}>
-        {/* <div className={styles.techContainer}>
-          <h1>Technical competency</h1>
-          <div className={styles.techItems} ref={techStackRef}>
-            {techStack.map((item, index) => {
-              return (
-                <React.Fragment key={index}>
-                  <div
-                    className={styles.techCard}
-                    style={{
-                      animationName: `${styles.techFitting}`,
-                      animationDuration: "3s",
-                      animationFillMode: "forwards",
-                      animationDelay: `${1 + index / 5}s`,
-                    }}
-                  >
-                    <div className={styles.techCardTop}>
-                      <Image
-                        src="/images/yellowHeart/right-arrow-icon.svg"
-                        width={20}
-                        height={20}
-                        alt="tech logo"
-                      />
-                    </div>
-                    <div className={styles.techCardBottom}>
-                      <label>{item.name}</label>
-                      <label>{item.yearsOfExperiance}</label>
-                    </div>
-                  </div>
-                </React.Fragment>
-              );
-            })}
-          </div>
-        </div> */}
+        <div className={styles.techContainer}>
+          {/* <canvas id="techItem" ref={techStackRef}></canvas> */}
+          {techStack.map((item, index) => {
+            return (
+              <div key={index} style={{ "--delay": index }} id={item.id}>
+                {item.name}
+              </div>
+            );
+          })}
+        </div>
         <div className={styles.education}>
           <h1>Education</h1>
-          <div
-            className={styles.eductionContainer}
-            ref={educationRef}
-            style={{
-              animationName: `${viewPortRef.edu ? styles.techFitting : "none"}`,
-              animationDelay: "3s",
-              animationDuration: "1s",
-              animationFillMode: "forwards",
-            }}
-          >
+          <div className={styles.eductionContainer} ref={educationRef}>
             <div className={styles.degree}>
               <div className={styles.eduactionDetails}>
                 <label>{"B.S Computer Science"}</label>
@@ -174,7 +185,15 @@ const SkillsAndEducation = (props) => {
           </div>
         </div>
         <div className={styles.awardsContainerMain}>
-          <h1>Awards</h1>
+          <h1>
+            {
+              "Although I'm not a tech geek, I think I have a moderately inventive mindset."
+            }
+          </h1>
+          <p>
+            Here are some of my university-related memories where we developed
+            and competed for the most creative ideas.
+          </p>
           <AwardsHackLn ref={hacklnRef} isVisible={viewPortRef.hackL} />
           <AwardsDevFest ref={hackdevRef} isVisible={viewPortRef.hackD} />
         </div>
@@ -230,14 +249,8 @@ const AwardsHackLn = forwardRef((props, ref) => {
                   <div
                     className={styles.imagesBackground}
                     style={{
+                      "--image-delay": index,
                       backgroundImage: `url(${item.path})`,
-                      animationDelay: `${1 + index / 3}s`,
-                      animationName: `${
-                        props.isVisible ? styles.imageFitting : "none"}`,
-                      animationDuration: "2s",
-                      animationTimingFunction: "linear",
-                      animationIterationCount: 1,
-                      animationFillMode: "none",
                     }}
                   ></div>
                 </React.Fragment>
@@ -272,14 +285,7 @@ const AwardsDevFest = forwardRef((props, ref) => {
                     className={styles.imagesBackground}
                     style={{
                       backgroundImage: `url(${item.path})`,
-                      animationDelay: `${1 + index / 3}s`,
-                      animationName: `${
-                        props.isVisible ? styles.imageFitting : "none"
-                      }`,
-                      animationDuration: "2s",
-                      animationTimingFunction: "linear",
-                      animationIterationCount: 1,
-                      animationFillMode: "none",
+                      "--image-delay": index,
                     }}
                   ></div>
                 </React.Fragment>

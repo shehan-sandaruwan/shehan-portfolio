@@ -51,7 +51,7 @@ const NavbarHomePage = (props) => {
   return (
     <div className={styles.navbarLinks}>
       {links.map((item, index) => {
-        const style = { "animation-delay": delay + index / 10 + "s" };
+        const style = { animationDelay: delay + index / 10 + "s" };
         return (
           <React.Fragment key={index}>
             <div

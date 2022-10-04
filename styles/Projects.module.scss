@@ -102,11 +102,11 @@
 
 .projectItem[data-state="animate"] {
     .details {
-        animation: project-item-animation-left 2s forwards;
+        animation: project-item-animation-left 1s forwards;
     }
 
     .projectImages {
-        animation: project-item-animation-right 2s 1s forwards;
+        animation: project-item-animation-right 1s 0.5s forwards;
     }
 }
 

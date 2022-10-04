@@ -34,12 +34,17 @@ body {
 .default-layout-container{
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   @include sm() {
     flex-direction: column;
     align-items: center;
     justify-content:center;
   }
+}
+
+ul {
+  list-style-type: none;
 }
 
 h1{
@@ -67,6 +72,7 @@ h4{
 p {
   color: #fff;
   width: 60ch;
+  margin-top: 25px;
   @include sm() {
     width: 100%;
   }
@@ -283,4 +289,22 @@ to{
     }
   }
 
+  .alice-carousel__wrapper{
+    margin-top: 50px;
+    height: 500px !important;
+
+    @include sm() {
+      height: 200px !important;
+    }
+  }
+
+  .alice-carousel{
+    display: inline-block;
+    height: 100%;
+    width: 60%;
+  }
+
+  .alice-carousel__stage-item{
+    width: 100% !important;
+  }
 

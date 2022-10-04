@@ -20,7 +20,7 @@ const projects = [
     description: "Frontend developer - freelance",
     index: 2,
     imageUrl: "/images/yellowHeart/fancy-mantis.png",
-    logoUrl: "/images/yellowHeart/fancy-logo.svg",
+    logoUrl: "/images/fancy-mantis/logo-mobile.png",
     background: "linear-gradient(to right, rgba(255,0,0,0), #2F69FE)",
     href: "/project-description/fancyMantis",
     duration: "2022-04 - Present",
@@ -89,13 +89,17 @@ const MyProjects = (props) => {
   const yellowHeart = useRef(null);
   const fancyMantis = useRef(null);
   const dfn = useRef(null);
+  const [y, setY] = useState("down");
 
+  useEffect(() => {
+    setY(window.scrollY);
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [y]);
 
   const handleScroll = () => {
     const clientY = window.innerHeight;
@@ -103,20 +107,32 @@ const MyProjects = (props) => {
       const yhY = clientY - calculateBoundryClinet(yellowHeart);
       const fmY = clientY - calculateBoundryClinet(fancyMantis);
       const dfnY = clientY - calculateBoundryClinet(dfn);
+      const yhYStat = Math.abs(yhY) >= 300 ? "animate" : "still";
+      const fmYState = Math.abs(fmY) >= 300 ? "animate" : "still";
+      const dfnYState = Math.abs(dfnY) >= 300 ? "animate" : "still";
 
-      yellowHeart.current.dataset.state =
-        yhY >= 200 ? calculateBoundryClinet(yellowHeart) && "animate" : "still";
-      fancyMantis.current.dataset.state =
-        fmY >= 200 ? calculateBoundryClinet(fancyMantis) && "animate" : "still";
-      dfn.current.dataset.state =
-        dfnY >= 200 ? calculateBoundryClinet(dfn) && "animate" : "still";
+      if (yellowHeart.current.dataset.state !== yhYStat) {
+        yellowHeart.current.dataset.state = yhYStat;
+      }
+
+      if (fancyMantis.current.dataset.state !== fmYState) {
+        fancyMantis.current.dataset.state = fmYState;
+      }
+
+      if (dfn.current.dataset.state !== dfnYState) {
+        dfn.current.dataset.state = dfnYState;
+      }
     }
+
+    setY(window.scrollY);
   };
 
   const calculateBoundryClinet = (ref) => {
-    const topValue = ref.current.getBoundingClientRect().top;
+    let top = 0;
 
-    return topValue;
+    top = ref.current.getBoundingClientRect().top;
+
+    return top;
   };
 
   return (
@@ -138,7 +154,6 @@ const MyProjects = (props) => {
                       ? fancyMantis
                       : dfn
                   }
-                  style={{ "--delay": index }}
                 >
                   <div
                     className={styles.projectImages}
