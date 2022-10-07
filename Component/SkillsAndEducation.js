@@ -60,15 +60,17 @@ const _techStack = [
 ];
 
 const SkillsAndEducation = (props) => {
-  const techStackRef = useRef(null);
+  const internShipRef = useRef(null);
   const educationRef = useRef(null);
+  const awardRef = useRef(null);
   const hacklnRef = useRef(null);
   const hackdevRef = useRef(null);
   const [techStack, setTechStack] = useState(_techStack);
 
   const [viewPortRef, setViewPortRef] = useState({
-    tech: false,
     edu: false,
+    intern: false,
+    award: false,
     hackL: false,
     hackD: false,
   });
@@ -81,24 +83,28 @@ const SkillsAndEducation = (props) => {
     function handleScroll() {
       console.log(window.innerHeight);
       return setViewPortRef({
-        tech:
-          techStackRef.current &&
-          window.innerHeight -
-            techStackRef.current.getBoundingClientRect().bottom >
-            20,
         edu:
           educationRef.current &&
           window.innerHeight -
             educationRef.current.getBoundingClientRect().top >
-            10,
+            100,
+        intern:
+          internShipRef.current &&
+          window.innerHeight -
+            internShipRef.current.getBoundingClientRect().top >
+            100,
+        award:
+          awardRef.current &&
+          window.innerHeight - awardRef.current.getBoundingClientRect().top >
+            100,
         hackL:
           hacklnRef.current &&
           window.innerHeight - hacklnRef.current.getBoundingClientRect().top >
-            20,
+            100,
         hackD:
           hackdevRef.current &&
           window.innerHeight - hackdevRef.current.getBoundingClientRect().top >
-            20,
+            100,
       });
     }
 
@@ -144,47 +150,73 @@ const SkillsAndEducation = (props) => {
             );
           })}
         </div>
-        <div className={styles.education}>
-          <h1>Education</h1>
-          <div className={styles.eductionContainer} ref={educationRef}>
-            <div className={styles.degree}>
-              <div className={styles.eduactionDetails}>
-                <label>{"B.S Computer Science"}</label>
-                <label>{"University of Colombo school of Computing"}</label>
+        <div
+          className={styles.education}
+          ref={educationRef}
+          data-edu={viewPortRef.edu ? "visible" : "invisible"}
+        >
+          <h1>
+            A quality education will always be a compass to guide one in the
+            right direction.
+          </h1>
+          <p>You can find the proof right here.</p>
+          <div className={styles.eductionContainer}>
+            <p>
+              The University of Colombo School of Computing provided me with a
+              solid grounding in computer science.
+            </p>
+            <div className={styles.degreePic}>
+              <div className={styles.degDetails}>
+                <label>{"B S Computer Science"}</label>
                 <label>{"2016 - 2019"}</label>
+                <a href="/degree-certificate.pdf" target="_blank">
+                  Degree certificate
+                </a>
               </div>
-              <a href="/degree-certificate.pdf" target="_blank">
-                <div
-                  className={styles.degreeImage}
-                  style={{
-                    backgroundImage:
-                      "url('/images/skills/degree-certificate.jpg')",
-                  }}
-                ></div>
-              </a>
+              <Image
+                src="/images/degree-cert.jpeg"
+                width={400}
+                height={300}
+                alt="degree certification picture"
+              />
             </div>
-            <div className={styles.internShip}>
-              <div className={styles.eduactionDetails}>
-                <label>{"Internship"}</label>
-                <label>{"Sysco LABS Sri Lanka"}</label>
-                <label>{"2018 september - 2019 march"}</label>
+            <div
+              className={styles.internShip}
+              ref={internShipRef}
+              data-intern={viewPortRef.intern ? "visible" : "invisible"}
+            >
+              <p>
+                I had the good fortune to complete my internship at the most
+                well-known tech company in Sri Lanka, where I got my first taste
+                of the professional tech sector.
+              </p>
+              <div className={styles.degreePic}>
+                <Image
+                  src="/syscoLabs.png"
+                  width={200}
+                  height={200}
+                  alt="sysco image"
+                />
+                <div className={styles.degDetails}>
+                  <label>{"Sysco LABS Sri Lanka"}</label>
+                  <label>{"2018 september - 2019 march"}</label>
+                  <a
+                    href="https://docs.google.com/presentation/d/1rcaV6fUe_o3WEJriORK0ByxSHjgocaZPp8VAmdHs2OE/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Internship Experiance
+                  </a>
+                </div>
               </div>
-              <a
-                href="https://docs.google.com/presentation/d/1rcaV6fUe_o3WEJriORK0ByxSHjgocaZPp8VAmdHs2OE/edit?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div
-                  className={styles.degreeImage}
-                  style={{
-                    backgroundImage: "url('/images/skills/Intern.png')",
-                  }}
-                ></div>
-              </a>
             </div>
           </div>
         </div>
-        <div className={styles.awardsContainerMain}>
+        <div
+          className={styles.awardsContainerMain}
+          ref={awardRef}
+          data-award={viewPortRef.award ? "visible" : "invisible"}
+        >
           <h1>
             {
               "Although I'm not a tech geek, I think I have a moderately inventive mindset."
@@ -231,7 +263,10 @@ const AwardsHackLn = forwardRef((props, ref) => {
   return (
     <React.Fragment>
       <div className={styles.awardsContainer} ref={ref}>
-        <div className={styles.hackLnContainer}>
+        <div
+          className={styles.hackLnContainer}
+          data-hackLn={props.isVisible ? "visible" : "invixible"}
+        >
           <div className={styles.details}>
             <label>HackLN Hackathon held on 2017</label>
             <label>The Best ideas for matches year 3001</label>
@@ -268,7 +303,10 @@ const AwardsDevFest = forwardRef((props, ref) => {
   return (
     <React.Fragment>
       <div className={styles.awardsContainer} ref={ref}>
-        <div className={styles.devFestContainer}>
+        <div
+          className={styles.devFestContainer}
+          data-hackdev={props.isVisible ? "visible" : "invixible"}
+        >
           <div className={styles.details}>
             <label>HACKADEV Hackathon held on 2018</label>
             <label>Innovative Idea for a Sustainable Society</label>

@@ -87,7 +87,33 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    h1 {
+        animation: educationTitle 2s both;
+    }
+}
+
+.degreePic{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: #4C6793;
+    border-radius: 4px;
+}
+
+.degDetails{
+    display: flex;
+    flex-direction: column;
+    width: 20ch;
+    font-size: 1.2em;
+    color: #fff;
+    align-self: center;
+    a {
+        font-size: 1em;
+        color: #8BBCCC;
+    }
 }
 
 .degree{
@@ -107,12 +133,10 @@
 
 .internShip{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 300px;
-    margin: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 25px;
     // background: linear-gradient(to right, #000, #D36B00, transparent);
     @include sm() {
         flex-direction: column-reverse;
@@ -124,12 +148,6 @@
     background-size: cover;
     width: 300px;
     height: 200px;
-}
-
-.internShip a:hover {
-    transform: translateY(-20px);
-    transition: 1s;
-
 }
 
 .degree a:hover {
@@ -154,17 +172,25 @@
 
 .eductionContainer{
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 100px;
+    margin-bottom: 50px;
+    padding: 50px;
+    border-radius: 4px;
+    background-color:rgba(82, 87, 93, 0.5);
+    p {
+        color: #8BBCCC;
+    }
 }
 
 .awardsContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 20px 20px 10px black ;
     margin-top: 50px;
     @include sm(){
         flex-direction: column;
@@ -172,30 +198,29 @@
   
 }
 
-.details{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.details label:nth-child(1) {
+.hackLnContainer .details label:nth-child(1) {
     color: #fff;
     font-weight: 600;
     font-size: 2.20em;
-    animation: move-text-color 5s forwards;
+    opacity: 0;
 }
 
-.details label:nth-child(2) {
+.hackLnContainer[data-hackLn="visible"] .details label:nth-child(1) {
+    animation: movetextcolor 5s forwards;
+}
+
+.hackLnContainer .details label:nth-child(2) {
     font-size: 20px;
-    color: #fff;
+    color: #EBEBEB;
     font-weight: 600;
 }
 
 .hackLnContainer {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
+    gap: 50px;
     & > .details > div > label {
         text-align: left;
     }
@@ -207,6 +232,12 @@
   
 }
 
+.hackLnContainer .details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .hackLnContainer .details p {
     align-self: flex-end;
     color: rgb(179, 78, 238);
@@ -215,6 +246,10 @@
     margin-right: 5px;
     opacity: 0;
     font-size: 1em;
+}
+
+.hackLnContainer[data-hackLn="visible"] .details p {
+    animation: secondheading 3s 1s both;
 }
 
 .devFestContainer {
@@ -230,13 +265,32 @@
   
 }
 
+.devFestContainer .details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.devFestContainer .details label:nth-child(1) {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2.20em;
+    opacity: 0;
+}
+
+.devFestContainer[data-hackdev="visible"] .details label:nth-child(1) {
+    animation: movetextcolor 5s forwards;
+}
+
 .devFestContainer {
     div.details {
      align-items: flex-end;
     }
 }
 
-.devFestContainer .details label {
+.devFestContainer .details label:nth-child(2) {
+    font-size: 20px;
+    color: #fff;
     text-align: right !important;
 }
 
@@ -244,7 +298,21 @@
     font-size: 1em;
 }
 
-@keyframes move-text-color {
+.devFestContainer .details p {
+    align-self: flex-end;
+    color: rgb(179, 78, 238);
+    font-weight: 600;
+    text-align: left;
+    margin-right: 5px;
+    opacity: 0;
+    font-size: 1em;
+}
+
+.devFestContainer[data-hackdev="visible"] .details p {
+    animation: secondheading 3s 1s both;
+}
+
+@keyframes movetextcolor {
     0% {
       bottom: -0.2em;
       opacity: 0;
@@ -268,17 +336,10 @@
   .images{
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
     white-space: nowrap;
     gap: 15px;
-    margin-top: 50px;
-    div {
-        opacity: 0;
-        animation: cardStream 1s calc(1s + var(--image-delay) * 1s) forwards;
-    }
-    div:hover {
-        transform: scale(1.5);
-    }
+    opacity: 0;
+    overflow: visible;
     @include sm() {
         flex-direction: column;
         justify-content: center;
@@ -286,13 +347,20 @@
     }
   }
 
+  .hackLnContainer[data-hackLn="visible"] .images{
+    animation: cardStream 2s 1s forwards;
+  }
+
   .devFestContainer .images {
     flex-direction: row-reverse;
-     div {
-        opacity: 0;
-        animation: cardStreamBackword 1s calc(1s + var(--image-delay) * 1s) forwards;
-     }
+    overflow: visible;
+    opacity: 0;
 }
+
+.devFestContainer[data-hackdev="visible"] .images {
+    animation: cardStreamBackword 2s 1s forwards;
+}
+
   .imagesBackground{
     width: 350px;
     height: 200px;
@@ -317,21 +385,29 @@
     align-items: center;
     gap: 100px;
     h1:first-child {
+        opacity: 0;
         width: 25ch;
-        animation: firstheading 6s both;
         @include sm() {
             width: 100%;
         }
     }
     p{
         align-self: flex-end;
-        color: rgb(179, 78, 238);
+        color: #F6F6F6;
         font-weight: 600;
         text-align: right;
         margin-right: 5px;
         font-size: 1.5em;
         opacity: 0;
-        animation: secondheading 3s 1s both;
+    }
+  }
+
+  .awardsContainerMain[data-award="visible"] {
+    h1:first-child {
+        animation: firstheading 6s forwards;
+    }
+    p{
+        animation: secondheading 3s 1s forwards;
     }
   }
 
@@ -367,6 +443,7 @@
     }
 
     50%, to {
+        opacity: 1;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);;
     }
 }
@@ -418,7 +495,7 @@
     --dy: calc(var(--y) *1px);
     // transform: rotate(0deg) translate3D(25vw, 25vh, 300px);
     box-shadow: 12px var(--dy) 15px 1px rgba(138, 138, 196, 0.2);
-    color: #ffd100;
+    color: rgb(216, 111, 13);
     animation: sqrB 10s calc(var(--delay) * -1s) infinite linear;
     @include sm() {
         box-shadow: 12px 12px 15px 1px rgba(138, 138, 196, 0.2);
@@ -459,15 +536,12 @@
   @keyframes cardStream {
     from, 0%{
         opacity: 0;
-        overflow-x: hidden;
+        overflow: hidden;
         transform: translateX(50%) translateY(50px) scale(0.5); 
     } 
-    25% {
-        opacity: 1;
-    }
     75% {
         opacity: 1;
-        transform: translateX(25%) translateY(0) scale(0.8);
+        transform: translateX(10%) translateY(50px) scale(1);
     }
     to {
         opacity: 1;
@@ -481,12 +555,25 @@
         overflow-x: hidden;
         transform: translateX(-50%) translateY(50px) scale(0.5); 
     } 
-    25% {
-        opacity: 1;
-    }
     75% {
         opacity: 1;
-        transform: translateX(-25%) translateY(0) scale(0.8);
+        transform: translateX(-10%) translateY(50px) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0) scale(1);
+    }
+}
+
+@keyframes educationTitle {
+    from, 0%{
+        opacity: 0.2;
+        overflow-x: hidden;
+        transform: translateY(100px) scale(1.2); 
+    } 
+    75% {
+        opacity: 1;
+        transform:  translateY(0) scale(1.2);
     }
     to {
         opacity: 1;
