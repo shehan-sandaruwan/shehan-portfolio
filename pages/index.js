@@ -38,7 +38,7 @@ export default function Home() {
         <link rel="icon" href="/myLogo.png" />
       </Head>
       <HomePageModal />
-      <DefaultLayout isActive={isActive}>
+      <DefaultLayout isActive={isActive} isShowFooter={false}>
         <div className={styles.mySelfImage}>
           <div div className={styles.homePageIntro}>
             <label>

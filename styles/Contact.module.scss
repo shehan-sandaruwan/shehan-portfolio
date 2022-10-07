@@ -1,45 +1,20 @@
 @import "mixins";
 
 .contactConatiner{
+    position: absolute;
     display: flex;
-    flex-direction: column;
-   align-items: center;
-    margin: 50px auto;
-    gap: 65px;
-    @include sm() {
-        margin-left: 60px;
-        align-items: flex-start;
-        padding: 20px;
-        gap: 33px;
-    }
+    flex-direction: row;
+    left: 30%;
+    gap: 15px;
+    bottom: 10px;
 }
 
 .contactHeader{
-    font-size: 3.2em;
+    font-size: 1.2em;
     font-weight: 600;
-    color: #fff;
+    color: #848181;
     @include sm() {
-        font-size: 2.2em;
-    }
-}
-
-.downloadResume{
-    text-align: center;
-    width: fit-content;
-    padding: 20px 30px 20px 30px;
-    border-radius: 50px;
-    background-size: 300% 300%;
-    background-image: linear-gradient(
-        -45deg, 
-        rgba(59,173,227,1) 0%, 
-        rgba(87,111,230,1) 25%, 
-        rgba(152,68,183,1) 51%, 
-        rgba(255,53,127,1) 100%
-  );  
-    animation: AnimateBG 2s ease infinite;
-    label{
-        font-size: 1.2em;
-        color: #fff;
+        font-size: 1em;
     }
 }
 
@@ -49,10 +24,13 @@
 }
 
 .contactDetails{
-    color: #fff;
-    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    color: rgb(75, 72, 72);
+    font-size: 1em;
+    gap: 15px;
     div img{
-        background-color: #fff;
+        background-color: #848181;
         border-radius: 100%;
        
     }
@@ -63,9 +41,15 @@
     
 }
 
+.contactItem a {
+    color: rgb(75, 72, 72);
+    font-size: 1em;
+    cursor: pointer;
+}
+
 .border{
     img{
-    border: 2px solid #fff !important;
+    border: 2px solid #848181 !important;
     }
 }
 
@@ -74,11 +58,14 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 20px;
-    gap: 15px;
+    gap: 5px;
     @include sm() {
         word-break: break-all;
     }
+}
+
+.contactItem span {
+    padding-left: 10px;
 }
 
 .socialMedia{
@@ -92,30 +79,3 @@
         bottom: 75px;
     }
 }
-
-@keyframes AnimateBG { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
-
-  @keyframes shake {
-    20%,
-    40%,
-    60%,
-    80% {
-      transform: translateX(1%);
-    }
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-      transform: translateX(-1%);
-    }
-    from,
-    to {
-      transform: none;
-    }
-  }
-  

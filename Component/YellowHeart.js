@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import ScrollMotion from "./Layout/ScrollMotion";
 import Link from "next/link";
+import CarouselContainer from "./CarouselContainer";
 
 const container = {
   hidden: { opacity: 0 },
@@ -48,124 +49,85 @@ const gallery = [
 const YellowHeart = () => {
   return (
     <DefaultLayout isActive="projects">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className={_styles.projectItem}
-        style={{
-          backgroundImage:
-            "linear-gradient(to right,  rgba(255,0,0,0), #ffd100)",
-        }}
-      >
-        <div className={_styles.details}>
-          <div className={_styles.logo}>
-            <Image
-              src="/images/yellowHeart/logo-mobile.svg"
-              width={50}
-              height={50}
-              alt="project logo"
-            />
-          </div>
-          <div className={_styles.description}>
-            <h1>YellowHeart</h1>
-            <p>
-              YellowHeart leverages Web3 to revitalize ticketing, empower fans,
-              artists, and sports teams.
-            </p>
-            <h3>Story about the project</h3>
-            <div className={styles.projectDetails}>
-              <motion.ul variants={container} initial="hidden" animate="show">
-                <motion.li variants={item}>
-                  Implemented web portal UI component by providing more
-                  significant attention to the details.
-                </motion.li>
-                <motion.li variants={item}>
-                  I spoke with the client and the business analyst to streamline
-                  precise needs. And I raised the concern and the blocker in
-                  Product sync to get broader and more sustainable solutions.
-                </motion.li>
-                <motion.li variants={item}>
-                  I was given difficult tasks right away, such as creating a
-                  Header banner configuration unit, so I had to adapt quickly
-                  and become comfortable with the project. Therefore, it was
-                  quite challenging.
-                </motion.li>
-                <motion.li variants={item}>
-                  I had to put in a lot of work to learn CSS/SCSS and HTML5 when
-                  I first started working on this project because I didn&rsquo;t
-                  have enough expertise with them. So now that I&rsquo;m in this
-                  position, I can comfortably use CSS/HTML5, and this experience
-                  has been a tremendous addition to my résumé.
-                </motion.li>
-                <motion.li variants={item}>
-                  I was able to use some of the advanced ReactJS
-                  functionalities, such as useCallback hooks when using event
-                  listeners and React HOC, which allowed me to apply my
-                  theoretical knowledge and improve my React skills.
-                </motion.li>
-                <motion.li variants={item}>
-                  Collaboration and communication help move things along faster.
-                </motion.li>
-              </motion.ul>
-              <p>
-                <br />
-                Technologies used: JavaScript, ReactJs, NextJs, HTML5, SCSS,
-                MUI, Zeplin
-              </p>
-            </div>
-          </div>
-        </div>
-        <motion.div variants={item} className={_styles.projectImages}>
+      <div className={styles.projectItems}>
+        <a href="http://yh.io/" target="_blank" rel="noreferrer">
           <Image
-            src="/images/yellowHeart/kol-page.png"
-            width={500}
-            height={400}
-            alt="project-images"
-          />
-        </motion.div>
-      </motion.div>
-      <div className={styles.gallerySection}>
-        <h1>Gallery</h1>
-        {gallery.map((item) => {
-          return (
-            <React.Fragment key={item.index}>
-              <div className={styles.galleryImagesYH}>
-                <Image
-                  src={item.imageUrl}
-                  width={800}
-                  height={500}
-                  alt="yellowHeart-gallery-images"
-                />
-                <div className={styles.nameAndTitle}>
-                  <h3>Frontend Developer</h3>
-                  <span>Shehan Dinuka</span>
-                </div>
-              </div>
-              <ScrollMotion background="rgba(240, 179, 10, 0.2)" />
-            </React.Fragment>
-          );
-        })}
-        <div className="go-next">
-          <Link href="/project-description/fancyMantis">
-            <a>
+            width={80}
+            height={80}
+            src={"/images/yellowHeart/logo-mobile.svg"}
+            alt="Yellow Hear Logo"
+          ></Image>
+        </a>
+        <CarouselContainer
+          gallery={gallery}
+          gradient={"linear-gradient(to bottom,  rgba(255,0,0,0), #ffd100)"}
+        />
+        <div className={styles.projectDetails}>
+          <p>
+            Leverage Web3 to revitalize ticketing, empower fans, artists, and
+            sports teams. Utilizing the latest and greatest in Web3 technology
+          </p>
+          <p>
+            This online application was created and put into use with the NFT
+            market in mind. where customers can buy and sell NFT items. The two
+            primary sections of this app are one for users and one for
+            administrators, who look after the web application&#8216;s content.
+            One of the biggest challenge I face with this application is
+            providing an accurate yet appealing platform. Pixel-perfect UI that
+            adheres to the Zipline requirement is required. The majority of the
+            pages on this dynamic web portal are produced using dynamic data; BE
+            integration and data modeling are typical use cases for most
+            scenarios.
+          </p>
+          <ul>
+            <li>
+              <span>&#9989;</span>
+              <content>
+                Reusable Streaming component where user can play download
+                Video/Audio s.
+              </content>
+            </li>
+            <li>
+              <span>&#9989;</span>
+              <content>
+                Contract Deployment Automation component where Admin should be
+                able to deploy contract seamlessly via this component.
+              </content>
+            </li>
+            <li>
               {" "}
-              Next <label className="mobile-view">Project</label>
-              <span
-                style={{
-                  display: "inline-block",
-                  verticalAlign: "middle",
-                }}
-              >
-                <Image
-                  src="/images/yellowHeart/right-arrow-icon.svg"
-                  width={20}
-                  height={20}
-                  alt="arrow-right"
-                />
-              </span>
-            </a>
-          </Link>
+              <span>&#9989;</span>Implemented Role-based privileges to admin and
+              user portal.
+            </li>
+            <li>
+              <span>&#9989;</span>
+              Header banner configuration component where Admin can upload
+              images and manage the content.
+            </li>
+            <li>
+              <span>&#9989;</span>
+              UI and Functional implementation of the web pages based on
+              Zipline. Those are a few of the major tasks I&#8216;ve carried out
+              as my daily duties.
+            </li>
+          </ul>
+          <p>
+            I was able to improve my technical competency in ReactJs, JavaScript
+            Next JS MUI, and HTML5/SCSS areas. As we worked for a US team with
+            an agile ecosystem where I actively participated in most of the
+            agile practices. I have engaged with Three amigo sessions, sprint
+            planning, retrospective and Jira helped us to streamline the
+            requirement and track the progress of the ongoing development. We
+            held daily stand-up meetings where we brought up all the
+            conversation topics and roadblocks to share with the team and gain
+            more clarity.
+          </p>
+          <p>
+            I&#8216;m happy to be a part of this team because it has allowed me
+            to advance my profession in a variety of ways. Every time we feel
+            that we have anything to contribute to the organization, we are
+            always invited to provide our opinions and comments.
+          </p>
         </div>
       </div>
     </DefaultLayout>

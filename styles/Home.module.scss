@@ -6,9 +6,11 @@ background-color: #000;
 }
 .mySelfImage{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  margin-top: 100px;
 }
 
 .imagePosition {
@@ -44,7 +46,6 @@ background-color: #000;
 }
 
 .aboutMe{
-  position: absolute;
   display: flex;
   gap: 25px;
   flex: 1;  

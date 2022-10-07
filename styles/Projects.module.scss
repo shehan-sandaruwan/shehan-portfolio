@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 .projectHeader{
     display: flex;
@@ -24,7 +26,7 @@
 .projectItem{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 30px 30px 30px 2em;
     margin-top: 90px;
@@ -38,11 +40,16 @@
 
 .details{
     display: flex;
+    position: absolute;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-left: 60px;
+    left: 78px;
+    background: rgba(0, 0, 0, 0.541);
+    padding: 25px;
+    border-radius: 5px;
+    opacity: 0;
     @include xl() {
         display: flex;
         align-items: center;
@@ -55,6 +62,9 @@
 
 .projectImages{
     display: flex;
+    padding: 50px;
+    border-radius: 5px;
+    opacity: 0;
 }
 
 .learnMore{
@@ -74,7 +84,6 @@
 .description{
     display: flex;
     flex-direction: column;
-    width: 60ch;
     gap: 10px;
     @include xl() {
         align-items: center;
@@ -82,5 +91,53 @@
         h1{
             font-size: 2.2em;;
         }
+    }
+}
+
+.projectHeader h1{
+    opacity: 0;
+    animation: header 1s both;
+    
+}
+
+.projectItem[data-state="animate"] {
+    .details {
+        animation: project-item-animation-left 1s forwards;
+    }
+
+    .projectImages {
+        animation: project-item-animation-right 1s 0.5s forwards;
+    }
+}
+
+@keyframes header {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+@keyframes project-item-animation-left {
+    from, 50%{
+        opacity: 0;
+        transform: translateY( 20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes project-item-animation-right {
+    from, 50%{
+        opacity: 0;
+        transform: translateX(-25%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

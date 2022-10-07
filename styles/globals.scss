@@ -1,6 +1,6 @@
 @import "variables";
 @import "mixins";
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 * { 
   margin: 0;
@@ -22,7 +22,7 @@ body {
   -o-background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Poppins';
   @include md() {
     background-image: linear-gradient(0deg,#000 25%,transparent 100%,transparent),url("/images/back-ground-image-mobile.png");
     background-size: 100% auto;
@@ -34,7 +34,9 @@ body {
 .default-layout-container{
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10%; 
   @include sm() {
     flex-direction: column;
     align-items: center;
@@ -42,8 +44,12 @@ body {
   }
 }
 
+ul {
+  list-style-type: none;
+}
+
 h1{
-  font-size: 3.20em;
+  font-size: 3.0em;
   background: -webkit-linear-gradient(#eee, rgb(36, 34, 34));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -67,6 +73,7 @@ h4{
 p {
   color: #fff;
   width: 60ch;
+  margin-top: 25px;
   @include sm() {
     width: 100%;
   }
@@ -283,4 +290,38 @@ to{
     }
   }
 
+  .alice-carousel__wrapper{
+    margin-top: 50px;
+    height: 500px !important;
 
+    @include sm() {
+      height: 200px !important;
+    }
+  }
+
+  .alice-carousel{
+    display: inline-block;
+    height: 100%;
+    width: 60%;
+  }
+
+  .alice-carousel__stage-item{
+    width: 100% !important;
+  }
+
+.footer-container{
+  display: block;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(6, 6, 5, 0.5);
+  color: white;
+  text-align: center;
+  padding-bottom: 10%; 
+}
+
+.main-container{
+  position: relative;
+  min-height: 100vh;
+}

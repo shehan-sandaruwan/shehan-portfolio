@@ -1,56 +1,43 @@
 import React from "react";
 import styles from "../styles/Contact.module.scss";
-import Image from "next/image";
+import { Icon } from "react-icons-kit";
+import { github } from "react-icons-kit/entypo/github";
+import { pin } from "react-icons-kit/entypo/pin";
+import { linkedin } from "react-icons-kit/entypo/linkedin";
+import { mobile } from "react-icons-kit/entypo/mobile";
+import { mail } from "react-icons-kit/entypo/mail";
+import { link } from "react-icons-kit/entypo/link";
 
 const MyContact = (props) => {
   return (
     <React.Fragment>
       <div className={styles.contactConatiner}>
-        <div className={styles.contactHeader}>
-          <label>Let&rsquo;s get in Touch</label>
-        </div>
-        <a href="/ShehanDinukaResume.pdf" target="_blank" rel="noreferrer">
+        {/* <a href="/ShehanDinukaResume.pdf" target="_blank" rel="noreferrer">
           <div className={styles.downloadResume}>
             <label>View Resume</label>
           </div>
-        </a>
+        </a> */}
         <div className={styles.contactDetails}>
           <div
             className={styles.contactItem}
             style={{ border: "none !important" }}
           >
-            <Image
-              width={45}
-              height={45}
-              src="/images/home-address.png"
-              alt="home address"
-            />{" "}
+            <Icon icon={pin} />
             <span>Colombo, Sri Lanka</span>
           </div>
           <div className={styles.contactItem + " " + styles.border}>
-            <Image
-              width={40}
-              height={40}
-              src="/images/phone-call.png"
-              alt="home address"
-            />{" "}
             <a href="tel:+94771752721" rel="noreferrer">
-              +94 77 175 2721
+              <Icon icon={mobile} /> +94 77 175 2721
             </a>
           </div>
           <div className={styles.contactItem + " " + styles.border}>
-            <Image
-              width={40}
-              height={40}
-              src="/images/mail.png"
-              alt="mail address"
-            />{" "}
             <a
               href="mailto:shehan.k.dinuka@gmail.com"
               target="_blank"
               rel="noreferrer"
             >
-              shehan.k.dinuka@gmail.com
+              <Icon icon={mail} />
+              <span>shehan.k.dinuka@gmail.com</span>
             </a>
           </div>
         </div>
@@ -60,36 +47,21 @@ const MyContact = (props) => {
             target="_blank"
             rel="noreferrer"
           >
-            <Image
-              width={50}
-              height={50}
-              src="/images/linkedin.png"
-              alt="home address"
-            />{" "}
+            <Icon icon={linkedin} /> <div>LinkedIn</div>
           </a>
           <a
             href="https://github.com/shehan-sandaruwan"
             target="_blank"
             rel="noreferrer"
           >
-            <Image
-              width={50}
-              height={50}
-              src="/images/github.png"
-              alt="home address"
-            />{" "}
+            <Icon icon={github} /> <div>GitHub</div>
           </a>
           <a
             href="https://www.upwork.com/freelancers/~017aadf5a5242dbe5a"
             target="_blank"
             rel="noreferrer"
           >
-            <Image
-              width={50}
-              height={50}
-              src="/images/upwork.png"
-              alt="home address"
-            />{" "}
+            <Icon icon={link} /> <div>Upwork</div>
           </a>
         </div>
       </div>
