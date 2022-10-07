@@ -40,7 +40,7 @@ export default function Home() {
       <HomePageModal />
       <DefaultLayout isActive={isActive} isShowFooter={false}>
         <div className={styles.mySelfImage}>
-          <div div className={styles.homePageIntro}>
+          <div className={styles.homePageIntro}>
             <label>
               <Greetings />
             </label>
