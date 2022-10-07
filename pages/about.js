@@ -38,7 +38,7 @@ const About = () => {
           animate="show"
           className={styles.mySelfImage}
         >
-          <div div className={styles.aboutMe}>
+          <div className={styles.aboutMe}>
             <h1>I create things for the web.</h1>
             <h2>I&rsquo;m Shehan Dinuka &#128522; </h2>
             <motion.p>
