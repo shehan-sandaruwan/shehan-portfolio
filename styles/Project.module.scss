@@ -68,13 +68,17 @@
 }
 
 .carouselContainer {
-    display: flex;
+    display: block;
     flex-direction: column;
     flex: 1;
     gap: 25px;
     margin-top: 50px;
-    width: 900px;
-    height: 400px;
+    width: 50vw;
+    height: 500px;
+    background-size: cover;
+    @include md() {
+        width: 100vw ;
+    }
 }
 
 .carousal{
@@ -84,6 +88,10 @@
 }
 .imageContainer {
     padding: 30px;
+    @include md() {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 
 .projectDetails{
@@ -92,7 +100,7 @@
         width: 80ch;
         margin-top: 25px;
         font-weight: 600;
-        @include sm() {
+        @include md() {
           width: 100%;
         }
 
@@ -105,6 +113,9 @@
 .projectItems{
     ul{
         width: 80ch;
+        @include md() {
+            width: 100%;
+        }
         li{
             display: flex;
             flex-direction: row;
@@ -125,6 +136,17 @@
 
 .projectItems > a:hover{
     animation: rotateY 1s linear;
+}
+.bgImage{
+    width: 50vw;
+    height: 500px;
+    background-size: cover;
+    @include md() {
+        width: 90vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 @keyframes rotateY {

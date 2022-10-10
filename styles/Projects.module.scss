@@ -58,6 +58,12 @@
         justify-content: center;
         width: 100%;
     }
+    @include sm() {
+        position:relative;
+        left:auto;
+        right: auto;
+        text-align:center;
+    }
 }
 
 .projectImages{
