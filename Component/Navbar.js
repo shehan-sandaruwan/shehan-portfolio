@@ -35,6 +35,7 @@ const NavBar = (props) => {
           ` ${props.isActive !== "home" ? styles.showHalf : ""}`
         }
       >
+        {!props.isHideOpener && <div className={styles.drawOpener}></div>}
         <NavbarHomePage isActive={props.isActive} />
       </nav>
     </React.Fragment>

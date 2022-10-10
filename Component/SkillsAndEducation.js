@@ -160,7 +160,10 @@ const SkillsAndEducation = (props) => {
             right direction.
           </h1>
           <p>You can find the proof right here.</p>
-          <div className={styles.eductionContainer}>
+          <div
+            className={styles.eductionContainer}
+            data-edu={viewPortRef.edu ? "visible" : "invisible"}
+          >
             <p>
               The University of Colombo School of Computing provided me with a
               solid grounding in computer science.

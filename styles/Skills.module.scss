@@ -89,9 +89,20 @@
     justify-content: center;
     align-items: flex-start;
     h1 {
-        animation: educationTitle 2s both;
+        opacity: 0;
     }
 }
+
+.education[data-edu="visible"] {
+    h1 {
+        animation: educationTitle 2s both;
+    }
+
+    p {
+      animation: techFitting 2s 2s both;  
+    }
+}
+
 
 .degreePic{
     display: flex;
@@ -142,6 +153,16 @@
         flex-direction: column-reverse;
         width: 100%;
     }
+
+    p {
+        opacity: 0;
+    }
+}
+
+.internShip[data-intern="visible"] {
+    p {
+        animation: educationAnim 2s 1s forwards;
+    }
 }
 
 .degreeImage{
@@ -184,7 +205,12 @@
     background-color:rgba(82, 87, 93, 0.5);
     p {
         color: #8BBCCC;
+        opacity: 0;
     }
+}
+
+.eductionContainer[data-edu="visible"] > p {
+    animation: educationAnim 2s 1s forwards;
 }
 
 .awardsContainer{
@@ -445,6 +471,19 @@
     50%, to {
         opacity: 1;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);;
+    }
+}
+
+@keyframes educationAnim {
+    from {
+        opacity: 0;
+        clip-path: inset(5% 48% 5% 47%);;
+    }
+
+    50%, to {
+        opacity: 1;
+        clip-path:inset(5% 1% 5% 0);
+        animation: none;
     }
 }
 
