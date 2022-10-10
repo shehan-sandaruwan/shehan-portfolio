@@ -13,14 +13,14 @@ const CarouselContainer = (props) => {
             <div
               className={styles.imageContainer}
               key={item.index}
-              style={{ backgroundImage: props.gradient }}
+              style={{
+                backgroundImage: props.gradient,
+              }}
             >
-              <Image
-                src={item.imageUrl}
-                width={900}
-                height={500}
-                alt="yellowHeart-gallery-images"
-              />
+              <div
+                className={styles.bgImage}
+                style={{ backgroundImage: `url(${item.imageUrl})` }}
+              ></div>
             </div>
           );
         })}

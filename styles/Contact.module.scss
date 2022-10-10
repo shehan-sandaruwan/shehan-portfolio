@@ -1,12 +1,18 @@
 @import "mixins";
 
 .contactConatiner{
-    position: absolute;
     display: flex;
     flex-direction: row;
     left: 30%;
     gap: 15px;
     bottom: 10px;
+    @include sm() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: auto;
+        right: auto;
+    }
 }
 
 .contactHeader{
