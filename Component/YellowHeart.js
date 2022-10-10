@@ -110,6 +110,12 @@ const YellowHeart = () => {
               Zipline. Those are a few of the major tasks I&#8216;ve carried out
               as my daily duties.
             </li>
+            <li>
+              <span>&#9989;</span>I have been assigned to fix prod issues in Our
+              YH wallet which is an extension, Implement new UI components, and
+              Most importantly resolve the GitHub Security alert issues, which
+              popped up due to the version depreciation of some npm packages.
+            </li>
           </ul>
           <p>
             I was able to improve my technical competency in ReactJs, JavaScript
@@ -128,6 +134,26 @@ const YellowHeart = () => {
             that we have anything to contribute to the organization, we are
             always invited to provide our opinions and comments.
           </p>
+        </div>
+        <div className="go-next">
+          <Link href="/project-description/fancyMantis">
+            <a>
+              {" "}
+              <span
+                style={{
+                  display: "block",
+                  verticalAlign: "middle",
+                }}
+              ></span>
+              Next <label className="mobile-view">Project</label>
+              <Image
+                src="/images/yellowHeart/right-arrow-icon.svg"
+                width={20}
+                height={20}
+                alt="arrow-left"
+              />
+            </a>
+          </Link>
         </div>
       </div>
     </DefaultLayout>

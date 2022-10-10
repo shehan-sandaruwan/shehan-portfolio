@@ -3,8 +3,7 @@ import DefaultLayout from "./Layout/DefaultLayout";
 import _styles from "../styles/Projects.module.scss";
 import styles from "../styles/Project.module.scss";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import ScrollMotion from "./Layout/ScrollMotion";
+import CarouselContainer from "./CarouselContainer";
 import Link from "next/link";
 
 const container = {
@@ -48,100 +47,80 @@ const gallery = [
 const Pro11Chart = () => {
   return (
     <DefaultLayout isActive="projects">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className={_styles.projectItem}
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,0,0,0), #4DBBEB)",
-        }}
-      >
-        <div className={_styles.details}>
-          <div className={_styles.logo}>
-            <Image
-              src="/images/yellowHeart/dfn-logo.svg"
-              width={50}
-              height={50}
-              alt="project logo"
-            />
-          </div>
-          <div className={_styles.description}>
-            <h1>Pro-11 DirectFn</h1>
-            <p>
-              lift capital markets by outpacing the advancing financial
-              technology landscape. Loaded with a lot of content,
-              functionalities &#38; new analytical tools, DirectFN Pro 11 aims
-              at greatly enhancing the user experience and simplifying &#38;
-              speeding the investment decision making process.
-            </p>
-            <h3>Story about the project</h3>
-            <div className={styles.projectDetails}>
-              <motion.ul variants={container} initial="hidden" animate="show">
-                <motion.li variants={item}>
-                  Responsible for developed and designing Chart core
-                  functionalities.
-                </motion.li>
-                <motion.li variants={item}>
-                  Different assessment elements and methodologies have been
-                  developed to aid the stock markets&rsquo; complex
-                  decision-making process.
-                </motion.li>
-                <motion.li variants={item}>
-                  Fixing production issues while also taking part in the
-                  application&rsquo;s maintenance process was included in the
-                  daily schedule.
-                </motion.li>
-                <motion.li variants={item}>
-                  Participated in client meetings as a core developer of the
-                  Chart to provide visibility of the implemented functionalities
-                  and Support clients to understand the process seamlessly.
-                </motion.li>
-                <motion.li variants={item}>
-                  Dom manipulation, Handling HTML5 canvas, Performance
-                  enhancement, and implementation of critical data processing
-                  logic were part of my role.
-                </motion.li>
-              </motion.ul>
-              <p>
-                <br />
-                Technologies used: JavaScript, PixiJs, HTML5, CSS, Jira, Design
-                Patterns (Singleton, Decorator, Factory, Observable)
-              </p>
-            </div>
-          </div>
-        </div>
-        <motion.div variants={item} className={_styles.projectImages}>
+      <div className={styles.projectItems}>
+        <a
+          href="https://fancy-mantis-client.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Image
-            src="/images/yellowHeart/chart.svg"
-            width={500}
-            height={400}
-            alt="project-images"
-          />
-        </motion.div>
-      </motion.div>
-      <div className={styles.gallerySection}>
-        <h1>Gallery</h1>
-        {gallery.map((item) => {
-          return (
-            <React.Fragment key={item.index}>
-              <div className={styles.galleryImagesPro11}>
-                <Image
-                  src={item.imageUrl}
-                  width={800}
-                  height={500}
-                  alt="yellowHeart-gallery-images"
-                />
-                <div className={styles.nameAndTitle}>
-                  <h3>Frontend Developer</h3>
-                  <span>Shehan Dinuka</span>
-                </div>
-              </div>
-              <ScrollMotion background="#4DBBEB" />
-            </React.Fragment>
-          );
-        })}
+            width={60}
+            height={60}
+            src={"/images/yellowHeart/dfn-logo.svg"}
+            alt="Yellow Hear Logo"
+          ></Image>
+        </a>
+        <CarouselContainer
+          gallery={gallery}
+          gradient={"linear-gradient(to bottom, rgba(255,0,0,0), #4DBBEB)"}
+        />
+        <div className={styles.projectDetails}>
+          <p>
+            Lift capital markets by outpacing the advancing financial technology
+            landscape. Loaded with a lot of content, functionalities &#38; new
+            analytical tools, DirectFN Pro 11 aims at greatly enhancing the user
+            experience and simplifying &#38; speeding the investment
+            decision-making process.
+          </p>
+          <p>
+            Responsible for developing and designing Chart core Functionalities.
+          </p>
+
+          <ul>
+            <li>
+              <span>&#9989;</span>
+              <content>
+                {" "}
+                Different assessment elements and methodologies have been
+                developed to aid the stock markets&rsquo; complex
+                decision-making process.
+              </content>
+            </li>
+            <li>
+              <span>&#9989;</span>
+              <content>
+                Fixing production issues while also taking part in the
+                application&rsquo;s maintenance process was included in the
+                daily schedule.
+              </content>
+            </li>
+            <li>
+              {" "}
+              <span>&#9989;</span> Participated in client meetings as a core
+              developer of the Chart to provide visibility of the implemented
+              functionalities and Support clients to understand the process
+              seamlessly.
+            </li>
+            <li>
+              <span>&#9989;</span>
+              Dom manipulation, Handling HTML5 canvas, Performance enhancement,
+              and implementation of critical data processing was part of my
+              role.
+            </li>
+          </ul>
+          <p>
+            I worked with Vanilla JS, ES6, HTML5, CSS, and PixiJS library to
+            draw charts in HTML canvas. The exposure I gain was paved the path
+            to becoming an experienced JS developer today. JavaScript design
+            patterns especially factory design pattern decorator patterns and
+            Observable are used frequently in this project. As a Junior
+            developer, My code is always reviewed by peers and TL. So I was able
+            to obtain and figure out lots of technical usage of the most
+            theoretical terms and the best and most efficient ways to implement
+            things. That taught me a lot.
+          </p>
+        </div>
+
         <div className="go-prev">
           <Link href="/project-description/fancyMantis">
             <a>

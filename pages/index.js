@@ -38,7 +38,11 @@ export default function Home() {
         <link rel="icon" href="/myLogo.png" />
       </Head>
       <HomePageModal />
-      <DefaultLayout isActive={isActive} isShowFooter={false}>
+      <DefaultLayout
+        isActive={isActive}
+        isShowFooter={false}
+        isHideOpener={true}
+      >
         <div className={styles.mySelfImage}>
           <div className={styles.homePageIntro}>
             <label>
@@ -84,7 +88,7 @@ const Greetings = () => {
   return (
     <span>
       {greetings.split("").map(function (char, index) {
-        let style = { "animation-delay": 6 + index / 10 + "s" };
+        let style = { "animation-delay": 3 + index / 10 + "s" };
         return (
           <>
             <span aria-hidden="true" key={index} style={style}>
