@@ -41,6 +41,7 @@ background-color: #000;
   }
 
   @include sm() {
+    margin-top: 50px;
     padding: 20px;
   }
 }
@@ -65,8 +66,8 @@ background-color: #000;
   @include sm() {
     top: 2em;
     width: 100%;
-    padding: 10px;
-    margin-left: 10em;
+    padding: 20px;
+    margin-left: 0;
     h1{
       text-align: center;
     }
