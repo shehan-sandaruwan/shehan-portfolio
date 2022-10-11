@@ -1,7 +1,17 @@
-import '../styles/globals.scss'
+import "../styles/globals.scss";
+import Head from "next/head";
+import React from "react";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <React.Fragment>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
+    </React.Fragment>
+  );
+  return;
 }
 
-export default MyApp
+export default MyApp;
