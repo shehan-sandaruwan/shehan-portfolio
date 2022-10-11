@@ -268,7 +268,7 @@ const AwardsHackLn = forwardRef((props, ref) => {
       <div className={styles.awardsContainer} ref={ref}>
         <div
           className={styles.hackLnContainer}
-          data-hackLn={props.isVisible ? "visible" : "invixible"}
+          data-hackLn={props.isVisible ? "visible" : "invisible"}
         >
           <div className={styles.details}>
             <label>HackLN Hackathon held on 2017</label>
@@ -287,8 +287,8 @@ const AwardsHackLn = forwardRef((props, ref) => {
                   <div
                     className={styles.imagesBackground}
                     style={{
-                      "--image-delay": index,
                       backgroundImage: `url(${item.path})`,
+                      "--image-delay": index,
                     }}
                   ></div>
                 </React.Fragment>
@@ -308,7 +308,7 @@ const AwardsDevFest = forwardRef((props, ref) => {
       <div className={styles.awardsContainer} ref={ref}>
         <div
           className={styles.devFestContainer}
-          data-hackdev={props.isVisible ? "visible" : "invixible"}
+          data-hackdev={props.isVisible ? "visible" : "invisible"}
         >
           <div className={styles.details}>
             <label>HACKADEV Hackathon held on 2018</label>

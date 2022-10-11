@@ -263,7 +263,6 @@
         min-width: 100%;
         flex-direction: column;
     }
-  
 }
 
 .hackLnContainer .details {
@@ -628,7 +627,7 @@
     } 
     to {
         opacity: 1;
-        transform: translateX(10px);
+        transform: translateX(0px);
     }
 }
 

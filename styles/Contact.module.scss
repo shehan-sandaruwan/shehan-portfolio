@@ -3,7 +3,8 @@
 .contactConatiner{
     display: flex;
     flex-direction: row;
-    left: 30%;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
     bottom: 10px;
     @include sm() {

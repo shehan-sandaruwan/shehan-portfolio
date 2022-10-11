@@ -76,10 +76,6 @@ const FancyMantis = () => {
         />
         <div className={styles.projectDetails}>
           <p>
-            Leverage Web3 to revitalize ticketing, empower fans, artists, and
-            sports teams. Utilizing the latest and greatest in Web3 technology
-          </p>
-          <p>
             Fancy Mantis is my first contract with The Upwork freelancing
             platform which is not just a contract but also a result of my
             continued contribution and perseverance. This contract is one of my
