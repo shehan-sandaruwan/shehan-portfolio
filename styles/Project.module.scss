@@ -73,9 +73,9 @@
     flex: 1;
     gap: 25px;
     margin-top: 50px;
-    width: 50vw;
+    width: 75vw;
     height: 500px;
-    background-size: cover;
+    background-size: contain;
     @include md() {
         width: 100vw ;
     }
@@ -138,14 +138,14 @@
     animation: rotateY 1s linear;
 }
 .bgImage{
-    width: 50vw;
+    width: 70vw;
     height: 500px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     @include md() {
         width: 90vw;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+    
     }
 }
 

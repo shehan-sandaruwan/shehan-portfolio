@@ -168,6 +168,7 @@
 
 .internShip[data-intern="visible"] {
     p {
+        opacity: 0;
         animation: educationAnim 2s 1s forwards;
     }
 }
@@ -519,7 +520,7 @@
         clip-path: inset(5% 48% 5% 47%);;
     }
 
-    50%, to {
+    to {
         opacity: 1;
         clip-path:inset(5% 1% 5% 0);
         animation: none;
@@ -609,7 +610,7 @@
     from, 0%{
         opacity: 0;
         overflow-x: hidden;
-        transform: translateX(50%) translateY(50px) scale(0.5); 
+        transform: translateX(20%) translateY(50px) scale(0.5); 
     } 
     75% {
         opacity: 1;
