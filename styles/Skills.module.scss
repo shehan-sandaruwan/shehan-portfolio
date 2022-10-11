@@ -396,6 +396,7 @@
 
   .hackLnContainer[data-hackLn="visible"] .images .imagesBackground{
     @include sm() {
+        opacity: 0;
         animation: cardStreamMob 2s calc(var(--image-delay) * 1.5s) forwards;
     }
   }
@@ -420,6 +421,7 @@
 
 .devFestContainer[data-hackdev="visible"] .images .imagesBackground {
     @include sm() {
+        opacity: 0;
         animation: cardStreamBackwordMob 2s calc(var(--image-delay) *1.5s) forwards;
     }
 }
