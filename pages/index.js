@@ -33,16 +33,8 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      <Head>
-        <title>shehan.is</title>
-        <link rel="icon" href="/myLogo.png" />
-      </Head>
       <HomePageModal />
-      <DefaultLayout
-        isActive={isActive}
-        isShowFooter={false}
-        isHideOpener={true}
-      >
+      <DefaultLayout isActive={isActive} isShowFooter={false}>
         <div className={styles.mySelfImage}>
           <div className={styles.homePageIntro}>
             <label>

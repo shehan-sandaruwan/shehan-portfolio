@@ -17,6 +17,7 @@
       left: -180px;
       position: fixed;
       cursor: pointer;
+      justify-content: space-between;
       .navbarLinks{
         align-items: flex-end;
       }
@@ -39,9 +40,13 @@
 }
 
 .showHalf {
-  left: -240px;
+  left: -180px;
   position: fixed;
   cursor: pointer;
+  @include sm() {
+    align-items: center;
+    left: -240px;
+  }
 }
 
 .showHalf {
@@ -52,12 +57,13 @@
 
 .showHalf:hover {
   animation: show-flier 2s ease-in-out  forwards;
+  @include sm() {
+    animation: none;
+  }
 }
 
-.navBarContainer:hover{
-  @include sm() {
-    animation: show-flier 1s linear 1 alternate forwards;
-  }
+.navBarContainer[data-nav="visible"] {
+  animation: show-flier 2s ease-in-out  forwards;
 }
 
 .navbarLinks{
@@ -68,6 +74,7 @@
     font-size: 25px;
     gap: 50px;
 }
+
 .link{
     opacity: 0 ;
     animation: fadeIn 0.75s forwards;
@@ -86,6 +93,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     }   
+}
+
+.crossIcon{
+  color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(37, 36, 36, 0.575);
+  align-self: flex-end;
+  cursor: pointer;
+  position: relative;
+  margin-right: 2px;
 }
 
 @keyframes fadeIn {
