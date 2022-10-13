@@ -113,7 +113,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 10px;
-    background-color: #4C6793;
+    background-color: #16181c;
     border-radius: 4px;
     @include sm() {
         flex-direction: column;
@@ -130,7 +130,7 @@
     align-self: center;
     a {
         font-size: 1em;
-        color: #8BBCCC;
+        color: #c0e3ef;
     }
 }
 
@@ -212,7 +212,7 @@
     border-radius: 4px;
     background-color:rgba(82, 87, 93, 0.5);
     p {
-        color: #8BBCCC;
+        color: #c0e3ef;
         opacity: 0;
     }
 }

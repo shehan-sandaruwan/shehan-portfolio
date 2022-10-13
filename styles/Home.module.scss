@@ -74,6 +74,19 @@ background-color: #000;
   }
 }
 
+.mobileNavIcon{
+  display: none;
+  @include sm() {
+    display: block;
+    position: sticky;
+    top: 0;
+    margin-left: -305px;
+    width: 60px;
+    height: 60px;
+    color: rgb(233 144 12 / 78%);
+  }
+}
+
 @keyframes move-text-color {
   0% {
     bottom: -0.2em;

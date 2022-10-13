@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "../styles/NavBar.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { cross } from "react-icons-kit/entypo/cross";
+import { Icon } from "react-icons-kit";
 
 const links = [
   {
@@ -32,10 +34,21 @@ const NavBar = (props) => {
       <nav
         className={
           styles.navBarContainer +
-          ` ${props.isActive !== "home" ? styles.showHalf : ""}`
+          ` ${
+            props.isActive !== "home"
+              ? styles.showHalf
+              : props.width <= 576
+              ? styles.showHalf
+              : ""
+          }`
         }
+        data-nav={props.isShow ? "visible" : "invisible"}
       >
-        {!props.isHideOpener && <div className={styles.drawOpener}></div>}
+        {props.isShow && (
+          <div className={styles.crossIcon} onClick={() => props.handleClose()}>
+            <Icon size={32} icon={cross} />
+          </div>
+        )}
         <NavbarHomePage isActive={props.isActive} />
       </nav>
     </React.Fragment>
