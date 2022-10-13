@@ -11,6 +11,9 @@ background-color: #000;
   align-items: center;
   flex-grow: 1;
   margin-top: 100px;
+  @include md() {
+    margin-top: 10px;
+  }
 }
 
 .imagePosition {
@@ -83,7 +86,7 @@ background-color: #000;
     margin-left: -305px;
     width: 60px;
     height: 60px;
-    color: rgb(233 144 12 / 78%);
+    color: rgba(243, 159, 32, 0.78);
   }
 }
 
