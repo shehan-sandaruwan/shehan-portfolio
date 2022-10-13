@@ -1,4 +1,4 @@
-import react, { useEffect, useRef, useState } from "react";
+import react, { useEffect, useRef, useState, useCallback } from "react";
 import NavBar from "../Navbar";
 import styles from "../../styles/Home.module.scss";
 import Image from "next/image";
@@ -17,6 +17,26 @@ const DefaultLayout = ({
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
+  const moreMenuRef = useRef(null);
+  // Attach the scroll listener to the div
+
+  const handleScroll = useCallback(() => {
+    if (moreMenuRef.current) {
+      if (window.scrollY <= 15) {
+        moreMenuRef.current.style.color = "rgba(243, 159, 32, 0.78)";
+      } else {
+        moreMenuRef.current.style.color = "rgba(243, 159, 32, 0.2)";
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
 
   const onClickMoreMenu = () => {
     setIsMobile(true);
@@ -30,7 +50,11 @@ const DefaultLayout = ({
     <React.Fragment>
       <div className="main-container" ref={containerRef}>
         <div className="default-layout-container">
-          <div className={styles.mobileNavIcon} onClick={onClickMoreMenu}>
+          <div
+            className={styles.mobileNavIcon}
+            onClick={onClickMoreMenu}
+            ref={moreMenuRef}
+          >
             <Icon size={64} icon={menu} />
           </div>
           <NavBar
