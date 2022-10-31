@@ -42,6 +42,22 @@ const gallery = [
     imageUrl: "/images/pro11/chart-7.png",
     index: 5,
   },
+  {
+    imageUrl: "/images/pro11/chart1.JPG",
+    index: 6,
+  },
+  {
+    imageUrl: "/images/pro11/chart2.png",
+    index: 7,
+  },
+  {
+    imageUrl: "/images/pro11/chart3.png",
+    index: 8,
+  },
+  {
+    imageUrl: "/images/pro11/chart4.png",
+    index: 9,
+  },
 ];
 
 const Pro11Chart = () => {

@@ -41,11 +41,15 @@ export default function Home() {
               <Greetings />
             </label>
             <p>
-              A driven guy with a positive outlook. I don&rsquo;t even strive to
-              be flawless since I am not. I think that being imperfect makes you
-              feel alive and excited. &#128512; <br />
-              Here you can find the detailed overview of my journey as a
-              Frontend developer.
+              A driven guy with a positive outlook. Obtained more than 3 years
+              of experience working as a Frontend developer and I&rsquo;m
+              specialized in working with JavaScript, ReactJS, HTML5, SCSS,
+              NextJs, and Many more JS-related Frameworks and Libraries. I
+              don&rsquo;t even strive to be flawless since I am not. I think
+              that being imperfect makes you feel alive and excited. &#128512;{" "}
+              <br />
+              Here you can find a detailed overview of my journey as a Frontend
+              developer.
             </p>
             <div className="learn-more">
               <Link href="/about">
