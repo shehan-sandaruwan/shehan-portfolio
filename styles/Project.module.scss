@@ -78,6 +78,7 @@
     background-size: contain;
     @include md() {
         width: 100vw ;
+        margin-top: 0;
     }
 }
 
@@ -145,10 +146,23 @@
     background-position: center;
     @include md() {
         width: 90vw;
-    
+        height: 180px;
     }
 }
 
 @keyframes rotateY {
     to { transform: rotateY(360deg); }
+  }
+
+  .projectDetails ul {
+    margin-left: 50px;
+    @include md() {
+        margin-left: 10px;
+    
+    }
+  }
+
+  .projectDetails ul li {
+    display: list-item;
+    list-style-type: '✅ ';
   }

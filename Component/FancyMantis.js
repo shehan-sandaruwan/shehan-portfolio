@@ -110,34 +110,31 @@ const FancyMantis = () => {
           </ol>
           <ul>
             <li>
-              <span>&#9989;</span>
               <content>Secure login - Used Next-Auth library and JWT.</content>
             </li>
             <li>
-              <span>&#9989;</span>
               <content>
                 Invoices contract and report generation capabilities.
               </content>
             </li>
             <li>
-              {" "}
-              <span>&#9989;</span>Change the Status of the User, Contract,
+             Change the Status of the User, Contract,
               Invoice, etc.
             </li>
             <li>
-              <span>&#9989;</span>
+              
               Add and Update user bank details.
             </li>
             <li>
-              <span>&#9989;</span>
+             
               Create email templates.
             </li>
             <li>
-              <span>&#9989;</span>
+              
               Arrange data in a tabular view for easy monitoring.
             </li>
             <li>
-              <span>&#9989;</span>
+              
               Capabilities to Switch between Dark and Light themes.
             </li>
           </ul>

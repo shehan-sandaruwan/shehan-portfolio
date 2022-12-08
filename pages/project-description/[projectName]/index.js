@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import YellowHeart from "../../../Component/YellowHeart";
 import FancyMantis from "../../../Component/FancyMantis";
 import Pro11Chart from "../../../Component/Pro11Chart";
+import AxsessProject from "../../../Component/AxsessProject";
 
 const ProjectRenderer = () => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const ProjectRenderer = () => {
       {projectName === "yellowHeart" && <YellowHeart />}
       {projectName === "fancyMantis" && <FancyMantis />}
       {projectName === "pro11Chart" && <Pro11Chart />}
+      {projectName === "axsess" && <AxsessProject />}
     </React.Fragment>
   );
 };
