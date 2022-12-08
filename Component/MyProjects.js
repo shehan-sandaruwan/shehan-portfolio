@@ -6,19 +6,29 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    name: "YellowHeart",
+    name: "AXSESS",
     description: "Frontend developer",
     index: 1,
+    imageUrl: "/images/axsess/axsess.png",
+    logoUrl: "/images/axsess/axsesslogo.png",
+    background: "linear-gradient(to right,  rgba(255,0,0,0), #61a233)",
+    href: "/project-description/axsess",
+    duration: "2022-08- Present",
+  },
+  {
+    name: "YellowHeart",
+    description: "Frontend developer",
+    index: 2,
     imageUrl: "/images/yellowHeart/kol-page.png",
     logoUrl: "/images/yellowHeart/logo-mobile.svg",
     background: "linear-gradient(to right,  rgba(255,0,0,0), #ffd100)",
     href: "/project-description/yellowHeart",
-    duration: "2021-09 - Present",
+    duration: "2021-09 - 2022-08",
   },
   {
     name: "Fancy-Mantis",
     description: "Frontend developer - freelance",
-    index: 2,
+    index: 3,
     imageUrl: "/images/yellowHeart/fancy-mantis.png",
     logoUrl: "/images/fancy-mantis/logo-mobile.png",
     background: "linear-gradient(to right, rgba(255,0,0,0), #2F69FE)",
@@ -28,7 +38,7 @@ const projects = [
   {
     name: "DFN-Pro-11",
     description: "Frontend developer freelance",
-    index: 3,
+    index: 4,
     imageUrl: "/images/yellowHeart/chart.svg",
     logoUrl: "/images/yellowHeart/dfn-logo.svg",
     background: "linear-gradient(to right, rgba(255,0,0,0), #4DBBEB)",
@@ -86,6 +96,7 @@ const item = {
 };
 
 const MyProjects = (props) => {
+  const axsess = useRef(null);
   const yellowHeart = useRef(null);
   const fancyMantis = useRef(null);
   const dfn = useRef(null);
@@ -103,13 +114,19 @@ const MyProjects = (props) => {
 
   const handleScroll = () => {
     const clientY = window.innerHeight;
-    if (yellowHeart.current && fancyMantis.current && dfn.current) {
+    if (axsess.current && yellowHeart.current && fancyMantis.current && dfn.current) {
+      const axY = clientY - calculateBoundryClinet(axsess);
       const yhY = clientY - calculateBoundryClinet(yellowHeart);
       const fmY = clientY - calculateBoundryClinet(fancyMantis);
       const dfnY = clientY - calculateBoundryClinet(dfn);
+      const axsessStat = Math.abs(axY) >= 300 ? "animate" : "still";
       const yhYStat = Math.abs(yhY) >= 300 ? "animate" : "still";
       const fmYState = Math.abs(fmY) >= 300 ? "animate" : "still";
       const dfnYState = Math.abs(dfnY) >= 300 ? "animate" : "still";
+      
+      if (axsess.current.dataset.state !== axsessStat) {
+        axsess.current.dataset.state = axsessStat;
+      }
 
       if (yellowHeart.current.dataset.state !== yhYStat) {
         yellowHeart.current.dataset.state = yhYStat;
@@ -149,9 +166,9 @@ const MyProjects = (props) => {
                   className={styles.projectItem}
                   ref={
                     project.index === 1
-                      ? yellowHeart
-                      : project.index === 2
-                      ? fancyMantis
+                      ? axsess :
+                       project.index === 2
+                      ?  yellowHeart :  project.index === 3 ? fancyMantis
                       : dfn
                   }
                 >

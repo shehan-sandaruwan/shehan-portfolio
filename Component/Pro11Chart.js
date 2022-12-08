@@ -94,7 +94,7 @@ const Pro11Chart = () => {
 
           <ul>
             <li>
-              <span>&#9989;</span>
+            
               <content>
                 {" "}
                 Different assessment elements and methodologies have been
@@ -103,7 +103,7 @@ const Pro11Chart = () => {
               </content>
             </li>
             <li>
-              <span>&#9989;</span>
+              
               <content>
                 Fixing production issues while also taking part in the
                 application&rsquo;s maintenance process was included in the
@@ -111,14 +111,13 @@ const Pro11Chart = () => {
               </content>
             </li>
             <li>
-              {" "}
-              <span>&#9989;</span> Participated in client meetings as a core
+               Participated in client meetings as a core
               developer of the Chart to provide visibility of the implemented
               functionalities and Support clients to understand the process
               seamlessly.
             </li>
             <li>
-              <span>&#9989;</span>
+              
               Dom manipulation, Handling HTML5 canvas, Performance enhancement,
               and implementation of critical data processing was part of my
               role.

@@ -81,37 +81,34 @@ const YellowHeart = () => {
           </p>
           <ul>
             <li>
-              <span>&#9989;</span>
               <content>
                 Reusable Streaming component where user can play download
                 Video/Audio s.
               </content>
             </li>
             <li>
-              <span>&#9989;</span>
               <content>
                 Contract Deployment Automation component where Admin should be
                 able to deploy contract seamlessly via this component.
               </content>
             </li>
             <li>
-              {" "}
-              <span>&#9989;</span>Implemented Role-based privileges to admin and
+             Implemented Role-based privileges to admin and
               user portal.
             </li>
             <li>
-              <span>&#9989;</span>
+             
               Header banner configuration component where Admin can upload
               images and manage the content.
             </li>
             <li>
-              <span>&#9989;</span>
+              
               UI and Functional implementation of the web pages based on
               Zipline. Those are a few of the major tasks I&#8216;ve carried out
               as my daily duties.
             </li>
             <li>
-              <span>&#9989;</span>I have been assigned to fix prod issues in Our
+              I have been assigned to fix prod issues in Our
               YH wallet which is an extension, Implement new UI components, and
               Most importantly resolve the GitHub Security alert issues, which
               popped up due to the version depreciation of some npm packages.
@@ -134,6 +131,27 @@ const YellowHeart = () => {
             that we have anything to contribute to the organization, we are
             always invited to provide our opinions and comments.
           </p>
+        </div>
+        <div className="go-prev">
+          <Link href="/project-description/axsess">
+            <a>
+              {" "}
+              <span
+                style={{
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                }}
+              >
+                <Image
+                  src="/images/yellowHeart/caret-left-icon-16.svg"
+                  width={20}
+                  height={20}
+                  alt="arrow-right"
+                />
+              </span>
+              Previouse <label className="mobile-view">Project</label>
+            </a>
+          </Link>
         </div>
         <div className="go-next">
           <Link href="/project-description/fancyMantis">

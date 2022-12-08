@@ -7,6 +7,7 @@ import { linkedin } from "react-icons-kit/entypo/linkedin";
 import { mobile } from "react-icons-kit/entypo/mobile";
 import { mail } from "react-icons-kit/entypo/mail";
 import { link } from "react-icons-kit/entypo/link";
+import {codepen} from 'react-icons-kit/fa/codepen'
 
 const MyContact = (props) => {
   return (
@@ -62,6 +63,13 @@ const MyContact = (props) => {
             rel="noreferrer"
           >
             <Icon icon={link} /> <div>Upwork</div>
+          </a>
+          <a
+            href="https://codepen.io/shehan-sandaruwan"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon icon={codepen} /> <div>Codepen</div>
           </a>
         </div>
       </div>
