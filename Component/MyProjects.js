@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Projects.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import NoteWorthyProjects from "./NoteWorthyProjects";
 
 const projects = [
   {
@@ -222,6 +222,10 @@ const MyProjects = (props) => {
               </React.Fragment>
             );
           })}
+        </div>
+        <div>
+          <h1>NoteWorthy Projects</h1>
+          <NoteWorthyProjects />
         </div>
       </div>
     </React.Fragment>

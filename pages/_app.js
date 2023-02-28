@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="google" content="notranslate" key="notranslate" />
         <meta
           name="description"
-          content="Shehan Dinuka is a Software Engineer Specilalized on front end development, He has obtained more than 4 years of experience developing web application from e-commerse to NFT based."
+          content="Shehan Dinuka is a Software Engineer, Specilalized on front end development, He has obtained more than 4 years of experience developing web application from e-commerse to NFT based."
         />
         <meta
           name="keywords"

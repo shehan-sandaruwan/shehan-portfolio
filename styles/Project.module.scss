@@ -82,11 +82,6 @@
     }
 }
 
-.carousal{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
 .imageContainer {
     padding: 30px;
     @include md() {

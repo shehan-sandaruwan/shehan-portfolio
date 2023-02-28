@@ -8,18 +8,18 @@ const CarouselContainer = (props) => {
   return (
     <div className={styles.carouselContainer}>
       <Carousel>
-        {props.gallery.map((item, index) => {
+        {props.gallery?.map((item, index) => {
           return (
             <div
               className={styles.imageContainer}
-              key={item.index}
+              key={item.index || index}
               style={{
                 backgroundImage: props.gradient,
               }}
             >
               <div
                 className={styles.bgImage}
-                style={{ backgroundImage: `url(${item.imageUrl})` }}
+                style={{ backgroundImage: `url(${item.imageUrl ? item.imageUrl : item})` }}
               ></div>
             </div>
           );

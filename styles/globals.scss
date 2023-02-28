@@ -335,3 +335,130 @@ to{
   position: relative;
   min-height: 100vh;
 }
+
+.card-container{
+  display: flex;
+  flex-direction: column;
+  width: 300px !important;
+  min-height: 500px;
+  border: 1px solid #fff;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  @include sm() {
+    min-height: auto;
+  }
+ 
+}
+
+.card-container:hover {
+  transform-style: preserve-3d;
+  animation: rot 0.5s linear 
+}
+
+@keyframes rot {
+  0% { 
+    transform: rotate3d(0, 1, 0, 0);
+   
+ }
+  100% { 
+    // transform:  translateZ(100px);
+    transform: perspective(800px) rotate3d(0, 1, 0, 45deg); }
+}
+
+.card-header{
+  height: 230px;
+  width: 100%;
+}
+
+.card-footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #333333;
+  height: 100%;
+   p{
+    width: 100%;
+    font-size: 13px;
+    margin-top: 0;
+   }
+}
+
+.tech-chip{
+  width: fit-content;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  display: inline-block;
+  background-color: rgba(243, 159, 32, 0.5);
+  color: #fff;
+  font-size: 13px;
+}
+
+.noteworthy-project{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 50px;
+  @include md() {
+    padding: 50px;
+  }
+  @include sm() {
+    width: 100% ;
+    margin-top: 0;
+    flex-direction: column;
+  }
+}
+
+.bg-image{
+  height: 230px;
+  width: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chips-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.carousal{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselContainer {
+  display: block;
+  flex-direction: column;
+  flex: 1;
+  gap: 25px;
+  padding: 5px;
+  background-size: contain;
+  @include md() {
+      width: 100% ;
+      margin-top: 0;
+  }
+}
+
+.link-src{
+  color: #fff;
+  border: 1ps solid #fff;
+  background-color: rgba(243, 159, 32, 0.78);
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  right: 5px;
+  position: absolute;
+  bottom: 5px;
+  font-size: 12px;
+}
