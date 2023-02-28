@@ -20,7 +20,7 @@ const projects = [
     {
         name: "WhatsApp Configuration Page",
         url: "https://github.com/shehan-sandaruwan/document-collapse",
-        src: 'https://www.upwork.com/freelancers/~017aadf5a5242dbe5a?p=1600515848178053120',
+       images: ['/images/whatsapp/wc1.png', '/images/whatsapp/wc2.png', '/images/whatsapp/wc3.png', '/images/whatsapp/wc4.png', '/images/whatsapp/wc5.png'],
         techs: ["HTML5", "i18n", "react-bootstrap", "JavaScript", "Reactjs", "classes"],
         description: "Developed configurable web page to integrate with WhatsApp",
     },
@@ -35,10 +35,7 @@ const NoteWorthyProjects = () => {
                 return(
                     <div className='card-container'>
                         <div className='card-header'>
-                            {project.src ? (
-                                <iframe src={project.src 
-                                }  className='bg-image'></iframe>
-                            ): (
+                            {project.images && (
                                 <div className="carouselContainer">
                                 <Carousel>
                                 {project.images?.map((item, index) => {
