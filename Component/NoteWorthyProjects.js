@@ -65,8 +65,9 @@ const NoteWorthyProjects = () => {
                                         )
                                     })}
                                 </div>
+                                <a className='link-src' href={project.url} target="_blank">Source code</a>
                         </div>
-                        <a className='link-src' href={project.url} target="_blank">Source code</a>
+                        
                     </div>
                 )
             })}
