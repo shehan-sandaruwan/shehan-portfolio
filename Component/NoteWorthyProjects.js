@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from "react-material-ui-carousel";
+import Image from 'next/image';
 
 const projects = [
     {
@@ -41,13 +42,15 @@ const NoteWorthyProjects = () => {
                                 {project.images?.map((item, index) => {
                                   return (
                                     <div
-                                    cla
                                       key={index}
                                     >
-                                      <div
-                                       className='bg-image'
-                                        style={{ backgroundImage: `url(${item})` }}
-                                      ></div>
+                                      <Image
+                                        className='bg-image'
+                                        src={item}
+                                        layout='fill'
+                                        objectFit="contain"
+                                        objectPosition='center'
+                                     />
                                     </div>
                                   );
                                 })}

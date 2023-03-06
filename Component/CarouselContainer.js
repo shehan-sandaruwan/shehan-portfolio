@@ -17,10 +17,12 @@ const CarouselContainer = (props) => {
                 backgroundImage: props.gradient,
               }}
             >
-              <div
-                className={styles.bgImage}
-                style={{ backgroundImage: `url(${item.imageUrl ? item.imageUrl : item})` }}
-              ></div>
+                 <Image                 
+                  src={item.imageUrl}
+                  layout='fill'
+                  objectFit="cover"
+                  objectPosition='center'
+                />
             </div>
           );
         })}

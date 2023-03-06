@@ -84,7 +84,12 @@
 
 .imageContainer {
     padding: 30px;
+    width: 70vw !important;
+    height: 500px !important;
+    background-size: contain;
     @include md() {
+        width: 90vw !important;
+        height: 180px !important;
         background-size: contain;
         background-repeat: no-repeat;
     }
@@ -132,17 +137,6 @@
 
 .projectItems > a:hover{
     animation: rotateY 1s linear;
-}
-.bgImage{
-    width: 70vw;
-    height: 500px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    @include md() {
-        width: 90vw;
-        height: 180px;
-    }
 }
 
 @keyframes rotateY {

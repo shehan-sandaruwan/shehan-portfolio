@@ -425,6 +425,8 @@
   width: 350px;
   height: 200px;
   background-size: cover;
+  overflow: hidden;
+  transition-property: transform;
   cursor: pointer;
   @include sm() {
     width: 300px;
@@ -432,10 +434,10 @@
 }
 
 .imagesBackground:hover {
-  transform: scale(1.5);
+  transform: scale(1.5, 1.5);
   transition: 1s;
   @include sm() {
-    transform: scale(1.2);
+    transform: scale(1.2, 1.2);
   }
 }
 
