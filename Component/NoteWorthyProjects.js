@@ -43,9 +43,9 @@ const NoteWorthyProjects = () => {
                                   return (
                                     <div
                                       key={index}
+                                      className='bg-image'
                                     >
                                       <Image
-                                        className='bg-image'
                                         src={item}
                                         layout='fill'
                                         objectFit="contain"
